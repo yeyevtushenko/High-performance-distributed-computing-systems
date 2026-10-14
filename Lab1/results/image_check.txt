@@ -1,0 +1,11 @@
+$ docker image inspect donations-api:1.0 --format "{{.Size}}"
+295892483
+$ docker run --rm donations-api:1.0 sh -c 'for t in gcc cc make g++ curl wget; do command -v $t || echo "$t: not found"; done'
+gcc: not found
+cc: not found
+make: not found
+g++: not found
+curl: not found
+wget: not found
+$ docker history --no-trunc donations-api:1.0 | grep -ci password
+0

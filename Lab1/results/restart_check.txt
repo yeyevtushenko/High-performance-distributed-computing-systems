@@ -1,0 +1,7 @@
+restart policy: always
+before: restart count 0, pid 3938, started 2026-10-14T08:45:08.576790715Z
+after: restart count 1, pid 4209, started 2026-10-14T08:45:12.301619633Z
+die exitCode=137
+start exitCode=
+non-200 responses after kill: 1
+time from process death to first 200 on /healthz: 0.98 s

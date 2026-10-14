@@ -1,0 +1,8 @@
+$ docker compose stop db
+$ curl http://localhost:8080/healthz
+{"error":"database unavailable"}
+HTTP 503
+$ docker compose start db
+$ curl http://localhost:8080/healthz
+{"status":"ok"}
+HTTP 200

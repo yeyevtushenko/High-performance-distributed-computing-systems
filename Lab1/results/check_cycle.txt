@@ -1,0 +1,60 @@
+
+$ curl -X POST http://localhost:8080/donations -H Content-Type: application/json -d {"donor_code":"D-7001","blood_group":"A","rh_factor":"+","volume_ml":450,"donation_date":"2026-10-12","is_suitable":true}
+{"id":1,"donor_code":"D-7001","blood_group":"A","rh_factor":"+","volume_ml":450,"donation_date":"2026-10-12","is_suitable":true}
+HTTP 201
+
+$ curl -X POST http://localhost:8080/donations -H Content-Type: application/json -d {"donor_code":"D-7002","blood_group":"C","rh_factor":"+","volume_ml":150,"donation_date":"2026-10-12","is_suitable":true}
+{"errors":[{"field":"blood_group","message":"Input should be 'O', 'A', 'B' or 'AB'"},{"field":"volume_ml","message":"Input should be greater than or equal to 200"}]}
+HTTP 400
+
+$ curl http://localhost:8080/donations?blood_group=A&limit=10&offset=0
+{"items":[{"id":1,"donor_code":"D-7001","blood_group":"A","rh_factor":"+","volume_ml":450,"donation_date":"2026-10-12","is_suitable":true}],"total":1,"limit":10,"offset":0}
+HTTP 200
+
+$ curl http://localhost:8080/donations/1
+{"id":1,"donor_code":"D-7001","blood_group":"A","rh_factor":"+","volume_ml":450,"donation_date":"2026-10-12","is_suitable":true}
+HTTP 200
+
+$ curl -X PUT http://localhost:8080/donations/1 -H Content-Type: application/json -d {"donor_code":"D-7001","blood_group":"A","rh_factor":"-","volume_ml":400,"donation_date":"2026-10-12","is_suitable":false}
+{"id":1,"donor_code":"D-7001","blood_group":"A","rh_factor":"-","volume_ml":400,"donation_date":"2026-10-12","is_suitable":false}
+HTTP 200
+
+$ curl -X PUT http://localhost:8080/donations/999 -H Content-Type: application/json -d {"donor_code":"D-7001","blood_group":"A","rh_factor":"-","volume_ml":400,"donation_date":"2026-10-12","is_suitable":false}
+{"error":"donation not found"}
+HTTP 404
+
+$ curl http://localhost:8080/donations/1
+{"id":1,"donor_code":"D-7001","blood_group":"A","rh_factor":"-","volume_ml":400,"donation_date":"2026-10-12","is_suitable":false}
+HTTP 200
+
+$ curl -X POST http://localhost:8080/donations -H Content-Type: application/json -d {"donor_code":"D-7003","blood_group":"O","rh_factor":"-","volume_ml":300,"donation_date":"2026-10-13","is_suitable":true}
+{"id":2,"donor_code":"D-7003","blood_group":"O","rh_factor":"-","volume_ml":300,"donation_date":"2026-10-13","is_suitable":true}
+HTTP 201
+
+$ docker compose down && docker compose up -d --wait
+
+$ curl http://localhost:8080/donations
+{"items":[{"id":1,"donor_code":"D-7001","blood_group":"A","rh_factor":"-","volume_ml":400,"donation_date":"2026-10-12","is_suitable":false},{"id":2,"donor_code":"D-7003","blood_group":"O","rh_factor":"-","volume_ml":300,"donation_date":"2026-10-13","is_suitable":true}],"total":2,"limit":20,"offset":0}
+HTTP 200
+
+$ curl -X DELETE http://localhost:8080/donations/1
+
+HTTP 204
+
+$ curl -X DELETE http://localhost:8080/donations/1
+{"error":"donation not found"}
+HTTP 404
+
+$ curl http://localhost:8080/donations/1
+{"error":"donation not found"}
+HTTP 404
+
+$ docker compose down -v && docker compose up -d --wait
+
+$ curl http://localhost:8080/healthz
+{"status":"ok"}
+HTTP 200
+
+$ curl http://localhost:8080/donations
+{"items":[],"total":0,"limit":20,"offset":0}
+HTTP 200

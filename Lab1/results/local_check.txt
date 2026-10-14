@@ -1,0 +1,15 @@
+$ curl http://127.0.0.1:8001/healthz
+{"status":"ok"}
+HTTP 200
+$ curl -X POST http://127.0.0.1:8001/donations -d {"donor_code":"D-0001","blood_group":"B","rh_factor":"+","volume_ml":350,"donation_date":"2026-10-01","is_suitable":true}
+{"id":1,"donor_code":"D-0001","blood_group":"B","rh_factor":"+","volume_ml":350,"donation_date":"2026-10-01","is_suitable":true}
+HTTP 201
+$ curl -X POST http://127.0.0.1:8001/donations -d {"id":5,"donor_code":"D-0002","blood_group":"B","rh_factor":"+","volume_ml":520,"donation_date":"2026-10-01","is_suitable":true}
+{"errors":[{"field":"volume_ml","message":"Input should be less than or equal to 500"},{"field":"id","message":"Extra inputs are not permitted"}]}
+HTTP 400
+$ curl "http://127.0.0.1:8001/donations?blood_group=B"
+{"items":[{"id":1,"donor_code":"D-0001","blood_group":"B","rh_factor":"+","volume_ml":350,"donation_date":"2026-10-01","is_suitable":true}],"total":1,"limit":20,"offset":0}
+HTTP 200
+$ curl "http://127.0.0.1:8001/donations?limit=500"
+{"errors":[{"field":"limit","message":"Input should be less than or equal to 100"}]}
+HTTP 400

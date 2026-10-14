@@ -1,0 +1,4 @@
+lab1-balancer-1 30.26% 78.81MiB / 7.748GiB
+lab1-web-1 95.53% 114.9MiB / 384MiB
+lab1-db-1 31.42% 42.38MiB / 7.748GiB
+CPU usage: 40.50% user, 18.37% sys, 41.12% idle 

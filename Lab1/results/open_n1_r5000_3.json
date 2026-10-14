@@ -1,0 +1,19 @@
+{
+  "requests": 150000,
+  "achieved_rps": 2596.37,
+  "p50_ms": 22839.79,
+  "p95_ms": 33542.9,
+  "p99_ms": 34818.92,
+  "mean_ms": 22361.83,
+  "non_2xx_share": 0.0003,
+  "mean_in_flight": 58385.7255,
+  "mean_sent_in_flight": 2816.0,
+  "mode": "open",
+  "target_rps": 5000.0,
+  "concurrency": null,
+  "instances": 1,
+  "path": "/donations/{id}",
+  "processes": 11,
+  "warmup_s": 10,
+  "duration_s": 30
+}

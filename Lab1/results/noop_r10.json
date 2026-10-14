@@ -1,0 +1,19 @@
+{
+  "requests": 300,
+  "achieved_rps": 10.0,
+  "p50_ms": 2.87,
+  "p95_ms": 3.57,
+  "p99_ms": 4.14,
+  "mean_ms": 2.88,
+  "non_2xx_share": 0.0,
+  "mean_in_flight": 0.0293,
+  "mean_sent_in_flight": 0.0232,
+  "mode": "open",
+  "target_rps": 10.0,
+  "concurrency": null,
+  "instances": 1,
+  "path": "/noop",
+  "processes": 11,
+  "warmup_s": 10,
+  "duration_s": 30
+}
