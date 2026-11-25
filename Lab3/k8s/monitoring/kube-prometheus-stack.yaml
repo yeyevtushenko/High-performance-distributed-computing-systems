@@ -1,0 +1,74 @@
+grafana:
+  enabled: false
+alertmanager:
+  enabled: false
+nodeExporter:
+  enabled: false
+kubeEtcd:
+  enabled: false
+kubeControllerManager:
+  enabled: false
+kubeScheduler:
+  enabled: false
+kubeProxy:
+  enabled: false
+defaultRules:
+  create: false
+
+prometheusOperator:
+  nodeSelector:
+    role: infra
+  tolerations:
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists
+      effect: NoSchedule
+  admissionWebhooks:
+    patch:
+      nodeSelector:
+        role: infra
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+          effect: NoSchedule
+
+kube-state-metrics:
+  nodeSelector:
+    role: infra
+  tolerations:
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists
+      effect: NoSchedule
+
+prometheus:
+  service:
+    type: NodePort
+    nodePort: 30090
+  prometheusSpec:
+    scrapeInterval: 5s
+    evaluationInterval: 5s
+    retention: 3d
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    nodeSelector:
+      role: infra
+    tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+    additionalScrapeConfigs:
+      - job_name: web
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              names: [default]
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app]
+            regex: web
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_container_port_number]
+            regex: "8000"
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_name]
+            target_label: pod
+          - source_labels: [__meta_kubernetes_pod_node_name]
+            target_label: node
