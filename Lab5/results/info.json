@@ -1,0 +1,6 @@
+{
+  "python": "3.13.0",
+  "implementation": "CPython",
+  "logical_cores": 11,
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+}
