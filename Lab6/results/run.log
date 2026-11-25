@@ -1,0 +1,187 @@
+{"cpu": "Apple M3 Pro", "C_phys": 11, "logical": 11, "memory_GB": 18.0, "os": "macOS-27.0.1-arm64-arm-64bit-Mach-O", "python": "3.13.0", "torch": "2.15.0", "n_th": 5, "dataset": "bloodmnist", "K": 8, "C": 3, "c1_c2_h": [64, 128, 512], "n_params": 3291528, "M_MiB": 12.556182861328125, "param_tensors": 8, "N": 7000, "train_total": 11959, "test": 3421, "B": 192, "P_max": 2}
+{"P": 1, "b": 192, "B": 192, "lr": 0.02, "sync": "none", "epochs": 3, "steps_per_epoch": 36, "optimizer_steps": 108, "max_loss_last_epoch": 1.0932209491729736, "ACC": 0.7772581116632563, "AUC": 0.959349400968321}
+{"P": 1, "b": 192, "B": 192, "sync": "none", "no_sync": false, "n_th": 5, "t_step_ms": 70.1728540007025, "t_50_s": 3.534895832883194, "X": 2715.780168314006}
+W1125 14:32:39.946000 52430 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1125 14:32:39.960000 52430 torch/distributed/run.py:982] 
+W1125 14:32:39.960000 52430 torch/distributed/run.py:982] *****************************************
+W1125 14:32:39.960000 52430 torch/distributed/run.py:982] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1125 14:32:39.960000 52430 torch/distributed/run.py:982] *****************************************
+{"P": 2, "B": 192, "max_grad_ratio": 2.7212558961764444e-06, "per_tensor_ratio": [4.4312966451798275e-07, 3.686947422920639e-07, 2.7212558961764444e-06, 5.500311317518936e-07, 5.725524943045457e-07, 1.5263657360264915e-07, 4.1306691400677664e-07, 4.9037279126196154e-08], "weight_sums": [-95.61185697186457, -95.61185697186457], "weight_sum_diff": 0.0}
+W1125 14:32:47.015000 52466 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1125 14:32:47.024000 52466 torch/distributed/run.py:982] 
+W1125 14:32:47.024000 52466 torch/distributed/run.py:982] *****************************************
+W1125 14:32:47.024000 52466 torch/distributed/run.py:982] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1125 14:32:47.024000 52466 torch/distributed/run.py:982] *****************************************
+{"P": 2, "b": 96, "B": 192, "sync": "manual", "no_sync": false, "n_th": 5, "t_step_ms": 77.40700000431389, "t_50_s": 3.919010667130351, "X": 2449.597823378594, "t_sync_ms": 15.40381251834333}
+W1125 14:32:54.836000 52497 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1125 14:32:54.846000 52497 torch/distributed/run.py:982] 
+W1125 14:32:54.846000 52497 torch/distributed/run.py:982] *****************************************
+W1125 14:32:54.846000 52497 torch/distributed/run.py:982] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1125 14:32:54.846000 52497 torch/distributed/run.py:982] *****************************************
+{"P": 2, "b": 96, "B": 192, "sync": "ddp", "no_sync": false, "n_th": 5, "t_step_ms": 63.563124858774245, "t_50_s": 3.2275595830287784, "X": 2974.3835095962045}
+W1125 14:33:01.703000 52500 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1125 14:33:01.712000 52500 torch/distributed/run.py:982] 
+W1125 14:33:01.712000 52500 torch/distributed/run.py:982] *****************************************
+W1125 14:33:01.712000 52500 torch/distributed/run.py:982] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1125 14:33:01.712000 52500 torch/distributed/run.py:982] *****************************************
+{"P": 2, "b": 96, "B": 192, "sync": "ddp", "no_sync": true, "n_th": 5, "t_step_ms": 63.4841249557212, "t_50_s": 3.2095682499930263, "X": 2991.0565073731827}
+W1125 14:33:08.680000 52505 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1125 14:33:08.689000 52505 torch/distributed/run.py:982] 
+W1125 14:33:08.689000 52505 torch/distributed/run.py:982] *****************************************
+W1125 14:33:08.689000 52505 torch/distributed/run.py:982] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1125 14:33:08.689000 52505 torch/distributed/run.py:982] *****************************************
+{"P": 2, "b": 96, "B": 192, "lr": 0.02, "sync": "ddp", "epochs": 3, "steps_per_epoch": 36, "optimizer_steps": 108, "max_loss_last_epoch": 1.0825295448303223, "ACC": 0.7784273604209295, "AUC": 0.9593614775732051}
+W1125 14:33:19.397000 52511 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+{"P": 1, "b": 192, "B": 192, "sync": "ddp", "no_sync": false, "n_th": 5, "t_step_ms": 70.63041650690138, "t_50_s": 3.576204957906157, "X": 2684.40990183648}
+W1125 14:33:26.281000 52515 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+{"P": 1, "b": 192, "B": 192, "sync": "ddp", "no_sync": true, "n_th": 5, "t_step_ms": 70.61739556957036, "t_50_s": 3.562028583139181, "X": 2695.093477194844}
+W1125 14:33:33.173000 52517 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+{"P": 1, "b": 96, "B": 96, "sync": "ddp", "no_sync": false, "n_th": 5, "t_step_ms": 37.79837489128113, "t_50_s": 1.9054118748754263, "X": 2519.140382870669}
+W1125 14:33:38.081000 52521 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+{"P": 1, "b": 96, "B": 96, "lr": 0.02, "sync": "ddp", "epochs": 3, "steps_per_epoch": 72, "optimizer_steps": 216, "max_loss_last_epoch": 0.6890113949775696, "ACC": 0.8392282958199357, "AUC": 0.9778372873337986}
+W1125 14:33:49.869000 52526 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1125 14:33:49.883000 52526 torch/distributed/run.py:982] 
+W1125 14:33:49.883000 52526 torch/distributed/run.py:982] *****************************************
+W1125 14:33:49.883000 52526 torch/distributed/run.py:982] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1125 14:33:49.883000 52526 torch/distributed/run.py:982] *****************************************
+{"P": 2, "b": 96, "B": 192, "lr": 0.04, "sync": "ddp", "epochs": 3, "steps_per_epoch": 36, "optimizer_steps": 108, "max_loss_last_epoch": 0.7085723876953125, "ACC": 0.8047354574685764, "AUC": 0.9730672959001657}
+W1125 14:34:01.366000 52544 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1125 14:34:01.379000 52544 torch/distributed/run.py:982] 
+W1125 14:34:01.379000 52544 torch/distributed/run.py:982] *****************************************
+W1125 14:34:01.379000 52544 torch/distributed/run.py:982] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1125 14:34:01.379000 52544 torch/distributed/run.py:982] *****************************************
+W1125 14:34:05.996000 52544 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 52545 closing signal SIGTERM
+E1125 14:34:06.015000 52544 torch/distributed/elastic/multiprocessing/api.py:1002] failed (exitcode: 1) local_rank: 1 (pid: 52546) of binary: /Users/yehoryevtushenko/BPOC/Lab6/.venv/bin/python3.13
+{"P": 2, "b": 96, "B": 192, "lr": 0.02, "sync": "ddp", "epochs": 3, "steps_per_epoch": 36, "optimizer_steps": 108, "max_loss_last_epoch": 1.0825295448303223, "ACC": 0.7784273604209295, "AUC": 0.9593614775732051}
+{
+  "table2": {
+    "one": {
+      "t_step_ms": 70.1728540007025,
+      "comm_ms": 0,
+      "c": 0,
+      "X": 2715.780168314006
+    },
+    "manual": {
+      "t_step_ms": 77.40700000431389,
+      "comm_ms": 15.40381251834333,
+      "c": 0.19899766839542776,
+      "X": 2449.597823378594
+    },
+    "ddp": {
+      "t_step_ms": 63.563124858774245,
+      "comm_ms": 0.07899990305304527,
+      "c": 0.0012428574464922665,
+      "X": 2974.3835095962045
+    },
+    "ddp_no_sync": {
+      "t_step_ms": 63.4841249557212,
+      "comm_ms": 0,
+      "c": 0,
+      "X": 2991.0565073731827
+    },
+    "max_grad_ratio": 2.7212558961764444e-06,
+    "weight_sum_diff": 0.0,
+    "ACC_one": 0.7772581116632563,
+    "ACC_ddp": 0.7784273604209295,
+    "AUC_one": 0.959349400968321,
+    "AUC_ddp": 0.9593614775732051
+  },
+  "table3": {
+    "1": {
+      "b": 192,
+      "t_step_ms": 70.63041650690138,
+      "t_step_ns_ms": 70.61739556957036,
+      "X": 2684.40990183648,
+      "S": 1.0,
+      "E": 1.0,
+      "e": null,
+      "c": 0.0001843531154845808
+    },
+    "2": {
+      "b": 96,
+      "t_step_ms": 63.563124858774245,
+      "t_step_ns_ms": 63.4841249557212,
+      "X": 2974.3835095962045,
+      "S": 1.1080213597637774,
+      "E": 0.5540106798818887,
+      "e": 0.8050193548853484,
+      "c": 0.0012428574464922665
+    }
+  },
+  "table4": {
+    "1": {
+      "B_P": 96,
+      "t_step_ms": 37.79837489128113,
+      "X": 2519.140382870669,
+      "S_w": 1.0,
+      "E_w": 1.0
+    },
+    "2": {
+      "B_P": 192,
+      "t_step_ms": 63.563124858774245,
+      "X": 2974.3835095962045,
+      "S_w": 1.1807136790871362,
+      "E_w": 0.5903568395435681
+    }
+  },
+  "table5": {
+    "P1_b": {
+      "B_P": 96,
+      "lr": 0.02,
+      "steps": 216,
+      "ACC": 0.8392282958199357,
+      "AUC": 0.9778372873337986,
+      "max_loss_last_epoch": 0.6890113949775696
+    },
+    "Pmax_lr0": {
+      "B_P": 192,
+      "lr": 0.02,
+      "steps": 108,
+      "ACC": 0.7784273604209295,
+      "AUC": 0.9593614775732051,
+      "max_loss_last_epoch": 1.0825295448303223
+    },
+    "Pmax_lrP": {
+      "B_P": 192,
+      "lr": 0.04,
+      "steps": 108,
+      "ACC": 0.8047354574685764,
+      "AUC": 0.9730672959001657,
+      "max_loss_last_epoch": 0.7085723876953125
+    }
+  },
+  "table6": {
+    "K_c": 15,
+    "s_f": 37,
+    "last_ckpt_step": 30,
+    "restored_step": 30,
+    "repeated_steps": 6,
+    "t_f_minus_t_c_s": 0.418626070022583,
+    "t_r_s": 2.1521689891815186,
+    "t_lost_s": 2.5707950592041016,
+    "loss_fail": {
+      "35": 1.2757225036621094,
+      "36": 1.3835234642028809,
+      "37": 1.645193338394165,
+      "38": 1.7754104137420654,
+      "39": 1.6963484287261963
+    },
+    "loss_fail_before_failure": {
+      "35": 1.2757225036621094,
+      "36": 1.3835234642028809
+    },
+    "loss_no_fail": {
+      "35": 1.2757225036621094,
+      "36": 1.3835234642028809,
+      "37": 1.645193338394165,
+      "38": 1.7754104137420654,
+      "39": 1.6963484287261963
+    },
+    "max_abs_diff_all_steps": 0.0,
+    "ACC_fail": 0.7784273604209295,
+    "ACC_no_fail": 0.7784273604209295,
+    "AUC_fail": 0.9593614775732051,
+    "AUC_no_fail": 0.9593614775732051,
+    "optimizer_steps_fail": 108
+  }
+}

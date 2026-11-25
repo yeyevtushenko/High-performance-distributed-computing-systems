@@ -1,0 +1,26 @@
+{
+  "cpu": "Apple M3 Pro",
+  "C_phys": 11,
+  "logical": 11,
+  "memory_GB": 18.0,
+  "os": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.0",
+  "torch": "2.15.0",
+  "n_th": 5,
+  "dataset": "bloodmnist",
+  "K": 8,
+  "C": 3,
+  "c1_c2_h": [
+    64,
+    128,
+    512
+  ],
+  "n_params": 3291528,
+  "M_MiB": 12.556182861328125,
+  "param_tensors": 8,
+  "N": 7000,
+  "train_total": 11959,
+  "test": 3421,
+  "B": 192,
+  "P_max": 2
+}
