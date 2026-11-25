@@ -1,0 +1,584 @@
+1793909005 lab2-balancer-1 0.04% 25.11MiB / 7.748GiB
+1793909005 lab2-web-1 15.05% 41.64MiB / 384MiB
+1793909005 lab2-db-1 0.01% 29.17MiB / 7.748GiB
+1793909005 lab2-prometheus-1 0.21% 31.41MiB / 7.748GiB
+1793909005 tdtest-pg 0.00% 120MiB / 7.748GiB
+1793909005 timedone-pg 0.00% 18.75MiB / 7.748GiB
+1793909005 loadgen 0.1% 393.9MiB
+1793909005 host CPU usage: 17.1% user, 11.92% sys, 71.5% idle 
+1793909011 lab2-balancer-1 4.32% 25.11MiB / 7.748GiB
+1793909011 lab2-web-1 17.99% 41.84MiB / 384MiB
+1793909011 lab2-db-1 5.66% 34.31MiB / 7.748GiB
+1793909011 lab2-prometheus-1 0.00% 31.41MiB / 7.748GiB
+1793909011 tdtest-pg 0.00% 120MiB / 7.748GiB
+1793909011 timedone-pg 0.00% 18.75MiB / 7.748GiB
+1793909011 loadgen 10.8% 396.5MiB
+1793909011 host CPU usage: 16.66% user, 10.59% sys, 72.73% idle 
+1793909016 lab2-balancer-1 4.05% 25.4MiB / 7.748GiB
+1793909016 lab2-web-1 13.30% 41.87MiB / 384MiB
+1793909016 lab2-db-1 6.55% 34.38MiB / 7.748GiB
+1793909016 lab2-prometheus-1 0.16% 31.39MiB / 7.748GiB
+1793909016 tdtest-pg 0.00% 120MiB / 7.748GiB
+1793909016 timedone-pg 0.00% 19.27MiB / 7.748GiB
+1793909016 loadgen 10.2% 396.5MiB
+1793909016 host CPU usage: 17.48% user, 11.14% sys, 71.37% idle 
+1793909022 lab2-balancer-1 5.63% 25.93MiB / 7.748GiB
+1793909022 lab2-web-1 16.77% 42.73MiB / 384MiB
+1793909022 lab2-db-1 4.58% 40.23MiB / 7.748GiB
+1793909022 lab2-prometheus-1 0.00% 31.39MiB / 7.748GiB
+1793909022 tdtest-pg 0.00% 120MiB / 7.748GiB
+1793909022 timedone-pg 0.00% 19.27MiB / 7.748GiB
+1793909022 loadgen 12.2% 396.6MiB
+1793909022 host CPU usage: 14.35% user, 8.14% sys, 77.50% idle 
+1793909028 lab2-balancer-1 5.87% 25.8MiB / 7.748GiB
+1793909028 lab2-web-1 16.58% 42.23MiB / 384MiB
+1793909028 lab2-db-1 4.44% 40.2MiB / 7.748GiB
+1793909028 lab2-prometheus-1 0.00% 31.64MiB / 7.748GiB
+1793909028 tdtest-pg 0.00% 120.2MiB / 7.748GiB
+1793909028 timedone-pg 0.00% 19.27MiB / 7.748GiB
+1793909028 loadgen 13.3% 396.7MiB
+1793909028 host CPU usage: 13.72% user, 9.58% sys, 76.68% idle 
+1793909033 lab2-balancer-1 4.68% 25.8MiB / 7.748GiB
+1793909033 lab2-web-1 14.95% 41.8MiB / 384MiB
+1793909033 lab2-db-1 4.05% 40.7MiB / 7.748GiB
+1793909033 lab2-prometheus-1 0.00% 31.64MiB / 7.748GiB
+1793909033 tdtest-pg 0.00% 120.2MiB / 7.748GiB
+1793909033 timedone-pg 0.00% 19.27MiB / 7.748GiB
+1793909033 loadgen 12.6% 396.7MiB
+1793909033 host CPU usage: 13.73% user, 9.93% sys, 76.33% idle 
+1793909039 lab2-balancer-1 6.20% 26.36MiB / 7.748GiB
+1793909039 lab2-web-1 24.11% 42.09MiB / 384MiB
+1793909039 lab2-db-1 6.18% 40.2MiB / 7.748GiB
+1793909039 lab2-prometheus-1 0.00% 31.89MiB / 7.748GiB
+1793909039 tdtest-pg 0.00% 120.2MiB / 7.748GiB
+1793909039 timedone-pg 0.00% 19.27MiB / 7.748GiB
+1793909039 loadgen 23.0% 396.9MiB
+1793909039 host CPU usage: 17.75% user, 11.21% sys, 71.2% idle 
+1793909044 lab2-balancer-1 6.34% 25.56MiB / 7.748GiB
+1793909044 lab2-web-1 19.25% 42.07MiB / 384MiB
+1793909044 lab2-db-1 4.91% 40.2MiB / 7.748GiB
+1793909044 lab2-prometheus-1 0.17% 31.89MiB / 7.748GiB
+1793909044 tdtest-pg 0.00% 120.4MiB / 7.748GiB
+1793909044 timedone-pg 0.00% 19.29MiB / 7.748GiB
+1793909044 loadgen 20.9% 397.0MiB
+1793909044 host CPU usage: 18.78% user, 10.39% sys, 70.82% idle 
+1793909050 lab2-balancer-1 6.07% 25.99MiB / 7.748GiB
+1793909050 lab2-web-1 22.48% 42.43MiB / 384MiB
+1793909050 lab2-db-1 6.03% 40.66MiB / 7.748GiB
+1793909050 lab2-prometheus-1 0.06% 31.62MiB / 7.748GiB
+1793909050 tdtest-pg 0.00% 120.3MiB / 7.748GiB
+1793909050 timedone-pg 0.00% 19.29MiB / 7.748GiB
+1793909050 loadgen 21.2% 397.3MiB
+1793909050 host CPU usage: 17.19% user, 7.46% sys, 75.34% idle 
+1793909056 lab2-balancer-1 6.45% 25.79MiB / 7.748GiB
+1793909056 lab2-web-1 24.74% 41.95MiB / 384MiB
+1793909056 lab2-db-1 6.72% 40.75MiB / 7.748GiB
+1793909056 lab2-prometheus-1 0.00% 31.86MiB / 7.748GiB
+1793909056 tdtest-pg 0.00% 120.3MiB / 7.748GiB
+1793909056 timedone-pg 0.00% 19.29MiB / 7.748GiB
+1793909056 loadgen 24.7% 397.4MiB
+1793909056 host CPU usage: 21.28% user, 11.0% sys, 67.71% idle 
+1793909061 lab2-balancer-1 7.72% 26.14MiB / 7.748GiB
+1793909061 lab2-web-1 25.47% 42.49MiB / 384MiB
+1793909061 lab2-db-1 6.72% 40.18MiB / 7.748GiB
+1793909061 lab2-prometheus-1 0.10% 31.86MiB / 7.748GiB
+1793909061 tdtest-pg 0.00% 120.3MiB / 7.748GiB
+1793909061 timedone-pg 0.00% 19.29MiB / 7.748GiB
+1793909061 loadgen 24.7% 397.7MiB
+1793909061 host CPU usage: 19.6% user, 9.33% sys, 71.60% idle 
+1793909067 lab2-balancer-1 6.89% 25.64MiB / 7.748GiB
+1793909067 lab2-web-1 25.42% 42.2MiB / 384MiB
+1793909067 lab2-db-1 9.74% 40.31MiB / 7.748GiB
+1793909067 lab2-prometheus-1 0.07% 31.86MiB / 7.748GiB
+1793909067 tdtest-pg 0.00% 120.3MiB / 7.748GiB
+1793909067 timedone-pg 0.01% 19.29MiB / 7.748GiB
+1793909067 loadgen 28.3% 397.8MiB
+1793909067 host CPU usage: 16.96% user, 9.48% sys, 73.55% idle 
+1793909072 lab2-balancer-1 5.40% 25.46MiB / 7.748GiB
+1793909072 lab2-web-1 33.62% 42.06MiB / 384MiB
+1793909072 lab2-db-1 8.09% 40.74MiB / 7.748GiB
+1793909072 lab2-prometheus-1 0.00% 31.61MiB / 7.748GiB
+1793909072 tdtest-pg 0.00% 120.3MiB / 7.748GiB
+1793909072 timedone-pg 0.00% 19.29MiB / 7.748GiB
+1793909072 loadgen 24.6% 398.0MiB
+1793909072 host CPU usage: 18.43% user, 10.95% sys, 70.60% idle 
+1793909078 lab2-balancer-1 6.26% 26.42MiB / 7.748GiB
+1793909078 lab2-web-1 36.36% 41.82MiB / 384MiB
+1793909078 lab2-db-1 5.81% 40.3MiB / 7.748GiB
+1793909078 lab2-prometheus-1 0.00% 31.87MiB / 7.748GiB
+1793909078 tdtest-pg 0.00% 120.1MiB / 7.748GiB
+1793909078 timedone-pg 0.00% 19.3MiB / 7.748GiB
+1793909078 loadgen 33.6% 398.2MiB
+1793909078 host CPU usage: 18.31% user, 10.28% sys, 71.40% idle 
+1793909083 lab2-balancer-1 6.76% 25.62MiB / 7.748GiB
+1793909083 lab2-web-1 31.99% 42.02MiB / 384MiB
+1793909083 lab2-db-1 9.14% 40.32MiB / 7.748GiB
+1793909083 lab2-prometheus-1 0.00% 31.61MiB / 7.748GiB
+1793909083 tdtest-pg 0.00% 120.1MiB / 7.748GiB
+1793909083 timedone-pg 0.00% 19.3MiB / 7.748GiB
+1793909083 loadgen 30.7% 398.4MiB
+1793909083 host CPU usage: 18.58% user, 10.94% sys, 70.47% idle 
+1793909089 lab2-balancer-1 7.86% 25.55MiB / 7.748GiB
+1793909089 lab2-web-1 27.66% 42.21MiB / 384MiB
+1793909089 lab2-db-1 5.60% 40.55MiB / 7.748GiB
+1793909089 lab2-prometheus-1 0.00% 31.61MiB / 7.748GiB
+1793909089 tdtest-pg 0.00% 120.4MiB / 7.748GiB
+1793909089 timedone-pg 0.00% 19.3MiB / 7.748GiB
+1793909089 loadgen 35.3% 398.8MiB
+1793909089 host CPU usage: 19.3% user, 10.8% sys, 70.88% idle 
+1793909094 lab2-balancer-1 6.12% 25.48MiB / 7.748GiB
+1793909094 lab2-web-1 27.06% 42.04MiB / 384MiB
+1793909094 lab2-db-1 5.73% 40.76MiB / 7.748GiB
+1793909094 lab2-prometheus-1 0.08% 31.86MiB / 7.748GiB
+1793909094 tdtest-pg 0.00% 120.4MiB / 7.748GiB
+1793909094 timedone-pg 0.00% 19.3MiB / 7.748GiB
+1793909094 loadgen 30.1% 399.0MiB
+1793909094 host CPU usage: 19.42% user, 12.15% sys, 68.42% idle 
+1793909100 lab2-balancer-1 7.71% 25.87MiB / 7.748GiB
+1793909100 lab2-web-1 27.86% 41.8MiB / 384MiB
+1793909100 lab2-db-1 7.28% 40.77MiB / 7.748GiB
+1793909100 lab2-prometheus-1 0.09% 32.11MiB / 7.748GiB
+1793909100 tdtest-pg 0.00% 120.4MiB / 7.748GiB
+1793909100 timedone-pg 0.00% 19.3MiB / 7.748GiB
+1793909100 loadgen 39.4% 337.5MiB
+1793909100 host CPU usage: 18.50% user, 10.64% sys, 70.84% idle 
+1793909106 lab2-balancer-1 7.43% 25.73MiB / 7.748GiB
+1793909106 lab2-web-1 26.52% 41.79MiB / 384MiB
+1793909106 lab2-db-1 7.12% 40.77MiB / 7.748GiB
+1793909106 lab2-prometheus-1 0.01% 31.86MiB / 7.748GiB
+1793909106 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909106 timedone-pg 0.00% 19.26MiB / 7.748GiB
+1793909106 loadgen 38.7% 337.7MiB
+1793909106 host CPU usage: 20.11% user, 12.8% sys, 67.80% idle 
+1793909111 lab2-balancer-1 8.15% 25.84MiB / 7.748GiB
+1793909111 lab2-web-1 28.63% 41.81MiB / 384MiB
+1793909111 lab2-db-1 7.59% 41.01MiB / 7.748GiB
+1793909111 lab2-prometheus-1 0.04% 31.86MiB / 7.748GiB
+1793909111 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909111 timedone-pg 0.00% 19.26MiB / 7.748GiB
+1793909111 loadgen 38.4% 337.9MiB
+1793909111 host CPU usage: 18.6% user, 9.51% sys, 72.41% idle 
+1793909117 lab2-balancer-1 8.41% 26.04MiB / 7.748GiB
+1793909117 lab2-web-1 29.23% 41.83MiB / 384MiB
+1793909117 lab2-db-1 7.80% 40.77MiB / 7.748GiB
+1793909117 lab2-prometheus-1 0.05% 31.61MiB / 7.748GiB
+1793909117 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909117 timedone-pg 0.00% 19.26MiB / 7.748GiB
+1793909117 loadgen 42.9% 338.2MiB
+1793909117 host CPU usage: 18.41% user, 9.97% sys, 71.61% idle 
+1793909122 lab2-balancer-1 8.00% 25.88MiB / 7.748GiB
+1793909122 lab2-web-1 28.13% 42.14MiB / 384MiB
+1793909122 lab2-db-1 10.31% 41.38MiB / 7.748GiB
+1793909122 lab2-prometheus-1 0.04% 31.86MiB / 7.748GiB
+1793909122 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909122 timedone-pg 0.00% 19.26MiB / 7.748GiB
+1793909122 loadgen 42.9% 338.7MiB
+1793909122 host CPU usage: 21.54% user, 9.95% sys, 68.50% idle 
+1793909128 lab2-balancer-1 8.77% 26.21MiB / 7.748GiB
+1793909128 lab2-web-1 28.73% 42.41MiB / 384MiB
+1793909128 lab2-db-1 10.61% 40.76MiB / 7.748GiB
+1793909128 lab2-prometheus-1 0.00% 32.11MiB / 7.748GiB
+1793909128 tdtest-pg 0.00% 120.5MiB / 7.748GiB
+1793909128 timedone-pg 0.00% 19.11MiB / 7.748GiB
+1793909128 loadgen 40.7% 338.9MiB
+1793909128 host CPU usage: 18.80% user, 9.31% sys, 71.87% idle 
+1793909133 lab2-balancer-1 8.29% 26.66MiB / 7.748GiB
+1793909133 lab2-web-1 29.47% 42.37MiB / 384MiB
+1793909133 lab2-db-1 8.13% 41.89MiB / 7.748GiB
+1793909133 lab2-prometheus-1 0.03% 32.11MiB / 7.748GiB
+1793909133 tdtest-pg 0.00% 120.5MiB / 7.748GiB
+1793909133 timedone-pg 0.00% 19.4MiB / 7.748GiB
+1793909133 loadgen 41.3% 339.5MiB
+1793909133 host CPU usage: 18.42% user, 8.92% sys, 72.64% idle 
+1793909139 lab2-balancer-1 8.22% 26.02MiB / 7.748GiB
+1793909139 lab2-web-1 32.08% 42.32MiB / 384MiB
+1793909139 lab2-db-1 7.90% 42.19MiB / 7.748GiB
+1793909139 lab2-prometheus-1 0.00% 31.85MiB / 7.748GiB
+1793909139 tdtest-pg 0.00% 120.5MiB / 7.748GiB
+1793909139 timedone-pg 0.00% 19.38MiB / 7.748GiB
+1793909139 loadgen 48.2% 340.0MiB
+1793909139 host CPU usage: 18.30% user, 9.68% sys, 72.0% idle 
+1793909144 lab2-balancer-1 8.98% 25.73MiB / 7.748GiB
+1793909144 lab2-web-1 42.81% 41.89MiB / 384MiB
+1793909144 lab2-db-1 7.84% 42.17MiB / 7.748GiB
+1793909144 lab2-prometheus-1 0.05% 31.84MiB / 7.748GiB
+1793909144 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909144 timedone-pg 0.00% 19.38MiB / 7.748GiB
+1793909144 loadgen 47.0% 340.5MiB
+1793909144 host CPU usage: 18.10% user, 10.3% sys, 71.85% idle 
+1793909150 lab2-balancer-1 8.63% 26.1MiB / 7.748GiB
+1793909150 lab2-web-1 33.82% 42.27MiB / 384MiB
+1793909150 lab2-db-1 7.99% 42.19MiB / 7.748GiB
+1793909150 lab2-prometheus-1 0.00% 32.09MiB / 7.748GiB
+1793909150 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909150 timedone-pg 0.00% 19.38MiB / 7.748GiB
+1793909150 loadgen 46.3% 340.9MiB
+1793909150 host CPU usage: 19.38% user, 10.19% sys, 70.42% idle 
+1793909156 lab2-balancer-1 8.81% 26.26MiB / 7.748GiB
+1793909156 lab2-web-1 43.58% 42.29MiB / 384MiB
+1793909156 lab2-db-1 7.91% 40.94MiB / 7.748GiB
+1793909156 lab2-prometheus-1 0.00% 32.33MiB / 7.748GiB
+1793909156 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909156 timedone-pg 0.00% 19.38MiB / 7.748GiB
+1793909156 loadgen 45.6% 341.1MiB
+1793909156 host CPU usage: 20.41% user, 11.45% sys, 68.13% idle 
+1793909161 lab2-balancer-1 7.99% 25.91MiB / 7.748GiB
+1793909161 lab2-web-1 30.39% 41.94MiB / 384MiB
+1793909161 lab2-db-1 8.06% 40.68MiB / 7.748GiB
+1793909161 lab2-prometheus-1 0.06% 32.07MiB / 7.748GiB
+1793909161 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909161 timedone-pg 0.00% 19.38MiB / 7.748GiB
+1793909161 loadgen 46.8% 342.1MiB
+1793909161 host CPU usage: 21.61% user, 10.72% sys, 67.66% idle 
+1793909167 lab2-balancer-1 9.55% 26.6MiB / 7.748GiB
+1793909167 lab2-web-1 32.08% 42.18MiB / 384MiB
+1793909167 lab2-db-1 8.52% 42.16MiB / 7.748GiB
+1793909167 lab2-prometheus-1 0.03% 31.83MiB / 7.748GiB
+1793909167 tdtest-pg 0.00% 121MiB / 7.748GiB
+1793909167 timedone-pg 0.00% 19.16MiB / 7.748GiB
+1793909167 loadgen 46.9% 342.6MiB
+1793909167 host CPU usage: 14.90% user, 13.82% sys, 71.27% idle 
+1793909172 lab2-balancer-1 9.56% 25.93MiB / 7.748GiB
+1793909172 lab2-web-1 31.99% 42.41MiB / 384MiB
+1793909172 lab2-db-1 10.62% 42.26MiB / 7.748GiB
+1793909172 lab2-prometheus-1 0.06% 32.08MiB / 7.748GiB
+1793909172 tdtest-pg 0.01% 121MiB / 7.748GiB
+1793909172 timedone-pg 0.00% 19.16MiB / 7.748GiB
+1793909172 loadgen 49.6% 343.1MiB
+1793909172 host CPU usage: 17.3% user, 11.66% sys, 71.30% idle 
+1793909178 lab2-balancer-1 9.81% 26.23MiB / 7.748GiB
+1793909178 lab2-web-1 32.00% 42.62MiB / 384MiB
+1793909178 lab2-db-1 10.66% 42.4MiB / 7.748GiB
+1793909178 lab2-prometheus-1 0.00% 32.33MiB / 7.748GiB
+1793909178 tdtest-pg 0.00% 121MiB / 7.748GiB
+1793909178 timedone-pg 0.00% 18.95MiB / 7.748GiB
+1793909178 loadgen 50.5% 343.7MiB
+1793909178 host CPU usage: 18.94% user, 11.18% sys, 69.86% idle 
+1793909183 lab2-balancer-1 8.53% 26.27MiB / 7.748GiB
+1793909183 lab2-web-1 32.27% 42.35MiB / 384MiB
+1793909183 lab2-db-1 8.52% 41.91MiB / 7.748GiB
+1793909183 lab2-prometheus-1 0.00% 32.08MiB / 7.748GiB
+1793909183 tdtest-pg 0.00% 121MiB / 7.748GiB
+1793909183 timedone-pg 0.00% 18.95MiB / 7.748GiB
+1793909183 loadgen 53.8% 344.3MiB
+1793909183 host CPU usage: 12.44% user, 9.18% sys, 78.36% idle 
+1793909189 lab2-balancer-1 10.00% 25.93MiB / 7.748GiB
+1793909189 lab2-web-1 32.60% 42.59MiB / 384MiB
+1793909189 lab2-db-1 8.56% 42.41MiB / 7.748GiB
+1793909189 lab2-prometheus-1 0.00% 32.08MiB / 7.748GiB
+1793909189 tdtest-pg 0.00% 121MiB / 7.748GiB
+1793909189 timedone-pg 0.00% 18.95MiB / 7.748GiB
+1793909189 loadgen 48.5% 344.7MiB
+1793909189 host CPU usage: 10.83% user, 10.15% sys, 79.0% idle 
+1793909194 lab2-balancer-1 8.96% 26.84MiB / 7.748GiB
+1793909194 lab2-web-1 32.16% 42.77MiB / 384MiB
+1793909194 lab2-db-1 8.70% 42.22MiB / 7.748GiB
+1793909194 lab2-prometheus-1 0.08% 32.07MiB / 7.748GiB
+1793909194 tdtest-pg 0.00% 121MiB / 7.748GiB
+1793909194 timedone-pg 0.00% 19.22MiB / 7.748GiB
+1793909194 loadgen 50.5% 345.2MiB
+1793909194 host CPU usage: 13.42% user, 9.64% sys, 76.92% idle 
+1793909200 lab2-balancer-1 9.64% 26.3MiB / 7.748GiB
+1793909200 lab2-web-1 33.38% 42.7MiB / 384MiB
+1793909200 lab2-db-1 8.94% 41.97MiB / 7.748GiB
+1793909200 lab2-prometheus-1 0.04% 32.07MiB / 7.748GiB
+1793909200 tdtest-pg 0.00% 121MiB / 7.748GiB
+1793909200 timedone-pg 0.00% 19.22MiB / 7.748GiB
+1793909200 loadgen 58.2% 346.0MiB
+1793909200 host CPU usage: 15.57% user, 9.96% sys, 74.45% idle 
+1793909206 lab2-balancer-1 9.83% 26.38MiB / 7.748GiB
+1793909206 lab2-web-1 34.92% 42.74MiB / 384MiB
+1793909206 lab2-db-1 8.98% 42.65MiB / 7.748GiB
+1793909206 lab2-prometheus-1 0.00% 31.81MiB / 7.748GiB
+1793909206 tdtest-pg 0.00% 121.3MiB / 7.748GiB
+1793909206 timedone-pg 0.00% 19.22MiB / 7.748GiB
+1793909206 loadgen 56.4% 346.4MiB
+1793909206 host CPU usage: 14.58% user, 11.6% sys, 74.35% idle 
+1793909211 lab2-balancer-1 10.31% 26.5MiB / 7.748GiB
+1793909211 lab2-web-1 34.19% 42.96MiB / 384MiB
+1793909211 lab2-db-1 9.08% 41.17MiB / 7.748GiB
+1793909211 lab2-prometheus-1 0.00% 32.06MiB / 7.748GiB
+1793909211 tdtest-pg 0.00% 121.3MiB / 7.748GiB
+1793909211 timedone-pg 0.00% 19.22MiB / 7.748GiB
+1793909211 loadgen 49.3% 346.9MiB
+1793909211 host CPU usage: 22.80% user, 10.69% sys, 66.49% idle 
+1793909217 lab2-balancer-1 11.47% 27.22MiB / 7.748GiB
+1793909217 lab2-web-1 36.02% 43.58MiB / 384MiB
+1793909217 lab2-db-1 9.78% 40.48MiB / 7.748GiB
+1793909217 lab2-prometheus-1 0.03% 32.06MiB / 7.748GiB
+1793909217 tdtest-pg 0.00% 121.3MiB / 7.748GiB
+1793909217 timedone-pg 0.00% 19.22MiB / 7.748GiB
+1793909217 loadgen 37.0% 347.1MiB
+1793909217 host CPU usage: 19.39% user, 11.75% sys, 68.84% idle 
+1793909222 lab2-balancer-1 11.59% 26.75MiB / 7.748GiB
+1793909222 lab2-web-1 50.92% 43.21MiB / 384MiB
+1793909222 lab2-db-1 9.95% 41.96MiB / 7.748GiB
+1793909222 lab2-prometheus-1 0.03% 32.06MiB / 7.748GiB
+1793909222 tdtest-pg 0.00% 121.3MiB / 7.748GiB
+1793909222 timedone-pg 0.00% 19.22MiB / 7.748GiB
+1793909222 loadgen 57.7% 347.6MiB
+1793909222 host CPU usage: 14.18% user, 11.25% sys, 74.55% idle 
+1793909228 lab2-balancer-1 12.65% 26.88MiB / 7.748GiB
+1793909228 lab2-web-1 53.27% 43.29MiB / 384MiB
+1793909228 lab2-db-1 12.66% 42.67MiB / 7.748GiB
+1793909228 lab2-prometheus-1 0.00% 32.06MiB / 7.748GiB
+1793909228 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909228 timedone-pg 0.00% 19.5MiB / 7.748GiB
+1793909228 loadgen 52.5% 348.0MiB
+1793909228 host CPU usage: 12.26% user, 10.34% sys, 77.39% idle 
+1793909233 lab2-balancer-1 11.70% 26.99MiB / 7.748GiB
+1793909233 lab2-web-1 50.76% 43.07MiB / 384MiB
+1793909233 lab2-db-1 9.63% 40.86MiB / 7.748GiB
+1793909233 lab2-prometheus-1 0.00% 32.06MiB / 7.748GiB
+1793909233 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909233 timedone-pg 0.00% 19.5MiB / 7.748GiB
+1793909233 loadgen 58.4% 348.5MiB
+1793909233 host CPU usage: 14.35% user, 10.18% sys, 75.45% idle 
+1793909239 lab2-balancer-1 13.84% 27.32MiB / 7.748GiB
+1793909239 lab2-web-1 39.90% 43.64MiB / 384MiB
+1793909239 lab2-db-1 10.89% 42.07MiB / 7.748GiB
+1793909239 lab2-prometheus-1 0.00% 32.06MiB / 7.748GiB
+1793909239 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909239 timedone-pg 0.00% 19.5MiB / 7.748GiB
+1793909239 loadgen 59.3% 349.5MiB
+1793909239 host CPU usage: 13.34% user, 10.92% sys, 75.72% idle 
+1793909244 lab2-balancer-1 12.22% 26.34MiB / 7.748GiB
+1793909244 lab2-web-1 39.20% 43.09MiB / 384MiB
+1793909244 lab2-db-1 11.42% 41.84MiB / 7.748GiB
+1793909244 lab2-prometheus-1 0.07% 32.06MiB / 7.748GiB
+1793909244 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909244 timedone-pg 0.00% 19.5MiB / 7.748GiB
+1793909244 loadgen 59.9% 350.0MiB
+1793909244 host CPU usage: 13.24% user, 10.72% sys, 76.2% idle 
+1793909250 lab2-balancer-1 11.97% 26.51MiB / 7.748GiB
+1793909250 lab2-web-1 40.12% 43.56MiB / 384MiB
+1793909250 lab2-db-1 10.57% 40.31MiB / 7.748GiB
+1793909250 lab2-prometheus-1 0.05% 32.31MiB / 7.748GiB
+1793909250 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909250 timedone-pg 0.00% 19.5MiB / 7.748GiB
+1793909250 loadgen 63.9% 350.6MiB
+1793909250 host CPU usage: 13.24% user, 12.90% sys, 73.84% idle 
+1793909256 lab2-balancer-1 12.01% 27MiB / 7.748GiB
+1793909256 lab2-web-1 39.75% 43.48MiB / 384MiB
+1793909256 lab2-db-1 10.73% 43.36MiB / 7.748GiB
+1793909256 lab2-prometheus-1 0.03% 32.05MiB / 7.748GiB
+1793909256 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909256 timedone-pg 0.00% 19.77MiB / 7.748GiB
+1793909256 loadgen 64.0% 351.0MiB
+1793909256 host CPU usage: 16.82% user, 12.46% sys, 70.71% idle 
+1793909261 lab2-balancer-1 13.24% 26.84MiB / 7.748GiB
+1793909261 lab2-web-1 43.16% 43.58MiB / 384MiB
+1793909261 lab2-db-1 11.30% 42.06MiB / 7.748GiB
+1793909261 lab2-prometheus-1 0.00% 32.05MiB / 7.748GiB
+1793909261 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909261 timedone-pg 0.00% 19.77MiB / 7.748GiB
+1793909261 loadgen 61.3% 352.0MiB
+1793909261 host CPU usage: 14.95% user, 11.42% sys, 73.61% idle 
+1793909267 lab2-balancer-1 20.97% 28.3MiB / 7.748GiB
+1793909267 lab2-web-1 54.59% 45.31MiB / 384MiB
+1793909267 lab2-db-1 19.57% 42.07MiB / 7.748GiB
+1793909267 lab2-prometheus-1 0.03% 32.04MiB / 7.748GiB
+1793909267 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909267 timedone-pg 0.00% 19.77MiB / 7.748GiB
+1793909267 loadgen 53.3% 305.6MiB
+1793909267 host CPU usage: 18.51% user, 13.38% sys, 68.9% idle 
+1793909272 lab2-balancer-1 13.81% 27.32MiB / 7.748GiB
+1793909272 lab2-web-1 42.57% 46.03MiB / 384MiB
+1793909272 lab2-db-1 11.51% 42.09MiB / 7.748GiB
+1793909272 lab2-prometheus-1 0.03% 32.04MiB / 7.748GiB
+1793909272 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909272 timedone-pg 0.00% 19.77MiB / 7.748GiB
+1793909272 loadgen 62.8% 306.2MiB
+1793909272 host CPU usage: 15.21% user, 12.18% sys, 72.60% idle 
+1793909278 lab2-balancer-1 15.06% 27.69MiB / 7.748GiB
+1793909278 lab2-web-1 46.30% 45.64MiB / 384MiB
+1793909278 lab2-db-1 12.60% 40.37MiB / 7.748GiB
+1793909278 lab2-prometheus-1 0.00% 32.04MiB / 7.748GiB
+1793909278 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909278 timedone-pg 0.00% 19.77MiB / 7.748GiB
+1793909278 loadgen 57.5% 306.9MiB
+1793909278 host CPU usage: 15.93% user, 12.66% sys, 71.39% idle 
+1793909283 lab2-balancer-1 15.60% 27.63MiB / 7.748GiB
+1793909283 lab2-web-1 47.60% 46.03MiB / 384MiB
+1793909283 lab2-db-1 15.43% 41.81MiB / 7.748GiB
+1793909283 lab2-prometheus-1 0.05% 32.29MiB / 7.748GiB
+1793909283 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909283 timedone-pg 0.00% 19.8MiB / 7.748GiB
+1793909283 loadgen 63.2% 307.6MiB
+1793909283 host CPU usage: 17.48% user, 12.13% sys, 70.37% idle 
+1793909289 lab2-balancer-1 15.01% 27.87MiB / 7.748GiB
+1793909289 lab2-web-1 47.57% 45.95MiB / 384MiB
+1793909289 lab2-db-1 12.62% 41.86MiB / 7.748GiB
+1793909289 lab2-prometheus-1 0.00% 32.04MiB / 7.748GiB
+1793909289 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909289 timedone-pg 0.00% 19.8MiB / 7.748GiB
+1793909289 loadgen 62.1% 308.2MiB
+1793909289 host CPU usage: 17.31% user, 12.68% sys, 70.0% idle 
+1793909294 lab2-balancer-1 14.92% 27.75MiB / 7.748GiB
+1793909294 lab2-web-1 50.31% 45.69MiB / 384MiB
+1793909294 lab2-db-1 12.64% 42MiB / 7.748GiB
+1793909294 lab2-prometheus-1 0.00% 32.04MiB / 7.748GiB
+1793909294 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909294 timedone-pg 0.00% 19.8MiB / 7.748GiB
+1793909294 loadgen 62.9% 308.8MiB
+1793909294 host CPU usage: 18.5% user, 13.51% sys, 68.42% idle 
+1793909300 lab2-balancer-1 16.97% 28.28MiB / 7.748GiB
+1793909300 lab2-web-1 60.08% 55.91MiB / 384MiB
+1793909300 lab2-db-1 14.13% 42.05MiB / 7.748GiB
+1793909300 lab2-prometheus-1 0.04% 32.04MiB / 7.748GiB
+1793909300 tdtest-pg 0.00% 121.1MiB / 7.748GiB
+1793909300 timedone-pg 0.00% 19.8MiB / 7.748GiB
+1793909300 loadgen 64.2% 309.9MiB
+1793909300 host CPU usage: 15.90% user, 12.62% sys, 71.46% idle 
+1793909306 lab2-balancer-1 15.71% 27.47MiB / 7.748GiB
+1793909306 lab2-web-1 53.47% 46.09MiB / 384MiB
+1793909306 lab2-db-1 13.11% 40.27MiB / 7.748GiB
+1793909306 lab2-prometheus-1 0.00% 32.04MiB / 7.748GiB
+1793909306 tdtest-pg 0.00% 120.9MiB / 7.748GiB
+1793909306 timedone-pg 0.00% 19.8MiB / 7.748GiB
+1793909306 loadgen 64.3% 310.5MiB
+1793909306 host CPU usage: 17.99% user, 13.28% sys, 68.71% idle 
+1793909311 lab2-balancer-1 18.55% 27.89MiB / 7.748GiB
+1793909311 lab2-web-1 67.29% 45.46MiB / 384MiB
+1793909311 lab2-db-1 15.92% 42.06MiB / 7.748GiB
+1793909311 lab2-prometheus-1 0.04% 32.04MiB / 7.748GiB
+1793909311 tdtest-pg 0.00% 120.9MiB / 7.748GiB
+1793909311 timedone-pg 0.00% 19.8MiB / 7.748GiB
+1793909311 loadgen 64.2% 311.5MiB
+1793909311 host CPU usage: 19.25% user, 13.62% sys, 67.11% idle 
+1793909317 lab2-balancer-1 19.18% 27.99MiB / 7.748GiB
+1793909317 lab2-web-1 69.66% 45.89MiB / 384MiB
+1793909317 lab2-db-1 16.47% 42.1MiB / 7.748GiB
+1793909317 lab2-prometheus-1 0.03% 32.04MiB / 7.748GiB
+1793909317 tdtest-pg 0.00% 120.9MiB / 7.748GiB
+1793909317 timedone-pg 0.00% 20.07MiB / 7.748GiB
+1793909317 loadgen 67.8% 311.9MiB
+1793909317 host CPU usage: 20.80% user, 15.33% sys, 63.85% idle 
+1793909322 lab2-balancer-1 19.15% 27.34MiB / 7.748GiB
+1793909322 lab2-web-1 53.82% 45.86MiB / 384MiB
+1793909322 lab2-db-1 16.25% 41.83MiB / 7.748GiB
+1793909322 lab2-prometheus-1 0.02% 32.04MiB / 7.748GiB
+1793909322 tdtest-pg 0.00% 120.9MiB / 7.748GiB
+1793909322 timedone-pg 0.00% 20.07MiB / 7.748GiB
+1793909322 loadgen 65.8% 313.0MiB
+1793909322 host CPU usage: 19.96% user, 14.17% sys, 65.85% idle 
+1793909328 lab2-balancer-1 19.61% 27.97MiB / 7.748GiB
+1793909328 lab2-web-1 69.11% 45.77MiB / 384MiB
+1793909328 lab2-db-1 16.04% 42.3MiB / 7.748GiB
+1793909328 lab2-prometheus-1 0.00% 32.04MiB / 7.748GiB
+1793909328 tdtest-pg 0.00% 120.9MiB / 7.748GiB
+1793909328 timedone-pg 0.00% 20.07MiB / 7.748GiB
+1793909328 loadgen 64.0% 313.7MiB
+1793909328 host CPU usage: 20.68% user, 15.81% sys, 63.49% idle 
+1793909333 lab2-balancer-1 18.57% 28.47MiB / 7.748GiB
+1793909333 lab2-web-1 55.26% 46.54MiB / 384MiB
+1793909333 lab2-db-1 16.43% 42.29MiB / 7.748GiB
+1793909333 lab2-prometheus-1 0.00% 31.78MiB / 7.748GiB
+1793909333 tdtest-pg 0.00% 120.9MiB / 7.748GiB
+1793909333 timedone-pg 0.00% 20.07MiB / 7.748GiB
+1793909333 loadgen 65.2% 312.1MiB
+1793909333 host CPU usage: 17.66% user, 13.52% sys, 68.80% idle 
+1793909339 lab2-balancer-1 18.12% 28.79MiB / 7.748GiB
+1793909339 lab2-web-1 61.59% 47.47MiB / 384MiB
+1793909339 lab2-db-1 22.65% 43.04MiB / 7.748GiB
+1793909339 lab2-prometheus-1 0.00% 32.03MiB / 7.748GiB
+1793909339 tdtest-pg 0.00% 120.9MiB / 7.748GiB
+1793909339 timedone-pg 0.00% 20.07MiB / 7.748GiB
+1793909339 loadgen 71.4% 313.6MiB
+1793909339 host CPU usage: 19.13% user, 14.75% sys, 66.10% idle 
+1793909344 lab2-balancer-1 18.79% 28.88MiB / 7.748GiB
+1793909344 lab2-web-1 56.41% 48.36MiB / 384MiB
+1793909344 lab2-db-1 15.94% 40.44MiB / 7.748GiB
+1793909344 lab2-prometheus-1 0.05% 32.03MiB / 7.748GiB
+1793909344 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909344 timedone-pg 0.00% 20.1MiB / 7.748GiB
+1793909344 loadgen 70.5% 314.6MiB
+1793909344 host CPU usage: 20.23% user, 13.91% sys, 65.85% idle 
+1793909350 lab2-balancer-1 18.97% 28.82MiB / 7.748GiB
+1793909350 lab2-web-1 56.60% 47.88MiB / 384MiB
+1793909350 lab2-db-1 15.79% 40.46MiB / 7.748GiB
+1793909350 lab2-prometheus-1 0.03% 32.03MiB / 7.748GiB
+1793909350 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909350 timedone-pg 0.00% 20.1MiB / 7.748GiB
+1793909350 loadgen 66.5% 315.5MiB
+1793909350 host CPU usage: 18.13% user, 14.6% sys, 67.79% idle 
+1793909356 lab2-balancer-1 18.96% 29.13MiB / 7.748GiB
+1793909356 lab2-web-1 56.65% 49.71MiB / 384MiB
+1793909356 lab2-db-1 15.75% 42.71MiB / 7.748GiB
+1793909356 lab2-prometheus-1 0.00% 32.03MiB / 7.748GiB
+1793909356 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909356 timedone-pg 0.00% 20.1MiB / 7.748GiB
+1793909356 loadgen 70.6% 316.7MiB
+1793909356 host CPU usage: 20.5% user, 15.39% sys, 64.55% idle 
+1793909361 lab2-balancer-1 24.99% 81.61MiB / 7.748GiB
+1793909361 lab2-web-1 94.00% 102.8MiB / 384MiB
+1793909361 lab2-db-1 15.65% 42.22MiB / 7.748GiB
+1793909361 lab2-prometheus-1 0.06% 32.03MiB / 7.748GiB
+1793909361 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909361 timedone-pg 0.00% 20.1MiB / 7.748GiB
+1793909361 loadgen 106.1% 350.9MiB
+1793909361 host CPU usage: 27.98% user, 23.78% sys, 48.23% idle 
+1793909367 lab2-balancer-1 154.67% 254.3MiB / 7.748GiB
+1793909367 lab2-web-1 109.25% 204.9MiB / 384MiB
+1793909367 lab2-db-1 13.65% 41.68MiB / 7.748GiB
+1793909367 lab2-prometheus-1 0.29% 32.03MiB / 7.748GiB
+1793909367 tdtest-pg 0.02% 121MiB / 7.748GiB
+1793909367 timedone-pg 0.00% 20.1MiB / 7.748GiB
+1793909367 loadgen 129.7% 385.9MiB
+1793909367 host CPU usage: 59.21% user, 38.5% sys, 2.73% idle 
+1793909372 lab2-balancer-1 19.72% 178.3MiB / 7.748GiB
+1793909372 lab2-web-1 95.75% 203MiB / 384MiB
+1793909372 lab2-db-1 25.06% 41.92MiB / 7.748GiB
+1793909372 lab2-prometheus-1 0.00% 31.79MiB / 7.748GiB
+1793909372 tdtest-pg 0.01% 121MiB / 7.748GiB
+1793909372 timedone-pg 0.00% 20.1MiB / 7.748GiB
+1793909372 loadgen 157.7% 427.4MiB
+1793909372 host CPU usage: 8.11% user, 29.68% sys, 62.20% idle 
+1793909378 lab2-balancer-1 2.28% 84.85MiB / 7.748GiB
+1793909378 lab2-web-1 1.85% 189.1MiB / 384MiB
+1793909378 lab2-db-1 0.47% 42.16MiB / 7.748GiB
+1793909378 lab2-prometheus-1 0.00% 31.78MiB / 7.748GiB
+1793909378 tdtest-pg 0.02% 120.9MiB / 7.748GiB
+1793909378 timedone-pg 0.01% 19.99MiB / 7.748GiB
+1793909378 loadgen 151.6% 468.3MiB
+1793909378 host CPU usage: 47.75% user, 50.74% sys, 1.49% idle 
+1793909383 lab2-balancer-1 1209.28% 81.54MiB / 7.748GiB
+1793909383 lab2-web-1 92.23% 201.2MiB / 384MiB
+1793909383 lab2-db-1 7.89% 42.19MiB / 7.748GiB
+1793909383 lab2-prometheus-1 0.00% 31.78MiB / 7.748GiB
+1793909383 tdtest-pg 2.20% 120.9MiB / 7.748GiB
+1793909383 timedone-pg 0.00% 19.99MiB / 7.748GiB
+1793909383 loadgen 166.0% 501.1MiB
+1793909383 host CPU usage: 61.24% user, 32.29% sys, 6.45% idle 
+1793909389 lab2-balancer-1 133.31% 85.85MiB / 7.748GiB
+1793909389 lab2-web-1 67.34% 202.3MiB / 384MiB
+1793909389 lab2-db-1 15.69% 42.35MiB / 7.748GiB
+1793909389 lab2-prometheus-1 0.00% 31.78MiB / 7.748GiB
+1793909389 tdtest-pg 0.00% 120.6MiB / 7.748GiB
+1793909389 timedone-pg 0.00% 19.99MiB / 7.748GiB
+1793909389 loadgen 159.1% 540.4MiB
+1793909389 host CPU usage: 36.83% user, 40.64% sys, 22.51% idle 
+1793909396 lab2-balancer-1 2.31% 63.01MiB / 7.748GiB
+1793909396 lab2-web-1 5.42% 187.2MiB / 384MiB
+1793909396 lab2-db-1 1.48% 42.39MiB / 7.748GiB
+1793909396 lab2-prometheus-1 0.00% 31.78MiB / 7.748GiB
+1793909396 tdtest-pg 0.00% 120.6MiB / 7.748GiB
+1793909396 timedone-pg 0.00% 19.99MiB / 7.748GiB
+1793909396 loadgen 272.8% 627.4MiB
+1793909396 host CPU usage: 8.53% user, 25.43% sys, 66.3% idle 
+1793909401 lab2-balancer-1 1.48% 58.21MiB / 7.748GiB
+1793909401 lab2-web-1 0.30% 183.6MiB / 384MiB
+1793909401 lab2-db-1 0.02% 42.7MiB / 7.748GiB
+1793909401 lab2-prometheus-1 0.18% 32.03MiB / 7.748GiB
+1793909401 tdtest-pg 0.00% 120.6MiB / 7.748GiB
+1793909401 timedone-pg 0.00% 19.99MiB / 7.748GiB
+1793909401 loadgen 119.8% 532.0MiB
+1793909401 host CPU usage: 51.34% user, 15.13% sys, 33.52% idle 
+1793909407 lab2-balancer-1 3.93% 37.59MiB / 7.748GiB
+1793909407 lab2-web-1 0.74% 183.4MiB / 384MiB
+1793909407 lab2-db-1 0.00% 42.25MiB / 7.748GiB
+1793909407 lab2-prometheus-1 0.19% 32.27MiB / 7.748GiB
+1793909407 tdtest-pg 0.00% 120.7MiB / 7.748GiB
+1793909407 timedone-pg 0.00% 19.77MiB / 7.748GiB
+1793909407 loadgen 0.0% 0.0MiB
+1793909407 host CPU usage: 8.23% user, 7.66% sys, 84.9% idle 

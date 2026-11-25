@@ -1,0 +1,13 @@
+{
+  "url": "http://localhost:8080",
+  "path": "/donations/{id}",
+  "processes": 11,
+  "instances": 2,
+  "t0_unix": 1793911001.559,
+  "profile": {
+    "mode": "const",
+    "rate": 500.0,
+    "duration": 40.0
+  },
+  "steps": []
+}

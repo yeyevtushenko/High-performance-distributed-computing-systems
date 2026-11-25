@@ -1,0 +1,5 @@
+$ curl -s localhost:9090/api/v1/targets (instance, health)
+web 172.18.0.8:8000 up
+web 172.18.0.4:8000 up
+web 172.18.0.6:8000 up
+web 172.18.0.7:8000 up
