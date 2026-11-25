@@ -1,0 +1,198 @@
+[36mINFO[0m[0000] Prep: Network                                
+[36mINFO[0m[0000] Created network 'k3d-lab4'                   
+[36mINFO[0m[0000] Created image volume k3d-lab4-images         
+[36mINFO[0m[0000] Starting new tools node...                   
+[36mINFO[0m[0000] Starting node 'k3d-lab4-tools'               
+[36mINFO[0m[0001] Creating node 'k3d-lab4-server-0'            
+[36mINFO[0m[0001] Creating node 'k3d-lab4-agent-0'             
+[36mINFO[0m[0001] Creating node 'k3d-lab4-agent-1'             
+[36mINFO[0m[0001] Creating LoadBalancer 'k3d-lab4-serverlb'    
+[36mINFO[0m[0001] Using the k3d-tools node to gather environment information 
+[36mINFO[0m[0001] Starting new tools node...                   
+[36mINFO[0m[0001] Starting node 'k3d-lab4-tools'               
+[36mINFO[0m[0002] Starting cluster 'lab4'                      
+[36mINFO[0m[0002] Starting servers...                          
+[36mINFO[0m[0003] Starting node 'k3d-lab4-server-0'            
+[36mINFO[0m[0006] Starting agents...                           
+[36mINFO[0m[0006] Starting node 'k3d-lab4-agent-0'             
+[36mINFO[0m[0006] Starting node 'k3d-lab4-agent-1'             
+[36mINFO[0m[0009] Starting helpers...                          
+[36mINFO[0m[0009] Starting node 'k3d-lab4-serverlb'            
+[36mINFO[0m[0015] Injecting records for hostAliases (incl. host.k3d.internal) and for 5 network members into CoreDNS configmap... 
+[36mINFO[0m[0017] Cluster 'lab4' created successfully!         
+[36mINFO[0m[0017] You can now use it like this:                
+kubectl cluster-info
+node/k3d-lab4-server-0 labeled
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 475B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/python:3.12
+#3 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 81B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 123B done
+#5 DONE 0.0s
+
+#6 [stage-1 1/4] FROM docker.io/library/python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b
+#6 resolve docker.io/library/python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b 0.0s done
+#6 DONE 0.0s
+
+#7 [build 1/4] FROM docker.io/library/python:3.12@sha256:9dd21fafb95870b99f9faa703a947d08feeb673048ad556e92ce503d0c086a95
+#7 resolve docker.io/library/python:3.12@sha256:9dd21fafb95870b99f9faa703a947d08feeb673048ad556e92ce503d0c086a95 0.0s done
+#7 DONE 0.0s
+
+#8 [build 3/4] COPY requirements.txt .
+#8 CACHED
+
+#9 [stage-1 2/4] COPY --from=build /opt/venv /opt/venv
+#9 CACHED
+
+#10 [build 2/4] RUN python -m venv /opt/venv
+#10 CACHED
+
+#11 [build 4/4] RUN pip install --no-cache-dir -r requirements.txt
+#11 CACHED
+
+#12 [stage-1 3/4] WORKDIR /srv
+#12 CACHED
+
+#13 [stage-1 4/4] COPY app ./app
+#13 CACHED
+
+#14 exporting to image
+#14 exporting layers done
+#14 exporting manifest sha256:65c4d833710a0150e0af4387f86c03f97fa60695fe0f7542c83fb093daf6d0a2 done
+#14 exporting config sha256:32ccc1ef33c6bba62c52b9b1b55f78aa7f2dddd707dc532f1460d8721b8dcd06 done
+#14 exporting attestation manifest sha256:af298de396bb5b096a36f05d611bc47dbaf8525afb7d5bf5b1f5157e781f7bc7 done
+#14 exporting manifest list sha256:95723f874a1ec1513803d81649d8df32a89a0c27cdc28b5a22f7630ad4c979e2 done
+#14 naming to docker.io/library/donations-api:4.0 done
+#14 unpacking to docker.io/library/donations-api:4.0 done
+#14 DONE 0.1s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/ch8pb7xq8ohqrc70ocs8qgy7z
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 395B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 0.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 52B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 66B done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b
+#5 resolve docker.io/library/python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b 0.0s done
+#5 DONE 0.0s
+
+#6 [5/6] RUN pip install --no-cache-dir -r requirements.txt
+#6 CACHED
+
+#7 [2/6] RUN apt-get update && apt-get install -y --no-install-recommends procps tini && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [4/6] COPY requirements.txt .
+#8 CACHED
+
+#9 [3/6] WORKDIR /srv
+#9 CACHED
+
+#10 [6/6] COPY worker.py .
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers done
+#11 exporting manifest sha256:798fbddc5b561dc1f7a650ae5cb9f4b39ec803ec087bba8168cb39560fb6089f done
+#11 exporting config sha256:4c6317292b87bf9c1cccdc74c5d1663ae1e9a986ee384d1a9006e5ab78f9c7c0 done
+#11 exporting attestation manifest sha256:d791e2fd4d2bd7f0de1fd7699ec78b7f7fbd10712d03eb1d1bf2bf3998479358 done
+#11 exporting manifest list sha256:9e52c7fb69ba2081002a137004806550532edecc77dfc6fe24f6fa581b98741f done
+#11 naming to docker.io/library/donations-worker:4.0 done
+#11 unpacking to docker.io/library/donations-worker:4.0 done
+#11 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/eawl1vcuno0jqcou4tfv88sq7
+[36mINFO[0m[0000] Importing image(s) into cluster 'lab4'       
+[36mINFO[0m[0000] Saving 2 image(s) from runtime...            
+[36mINFO[0m[0002] Importing images into nodes...               
+[36mINFO[0m[0002] Importing images from tarball '/k3d/images/k3d-lab4-images-20261125125810.tar' into node 'k3d-lab4-server-0'... 
+[36mINFO[0m[0002] Importing images from tarball '/k3d/images/k3d-lab4-images-20261125125810.tar' into node 'k3d-lab4-agent-0'... 
+[36mINFO[0m[0002] Importing images from tarball '/k3d/images/k3d-lab4-images-20261125125810.tar' into node 'k3d-lab4-agent-1'... 
+[36mINFO[0m[0007] Removing the tarball(s) from image volume... 
+[36mINFO[0m[0008] Removing k3d-tools node...                   
+[36mINFO[0m[0009] Successfully imported image(s)               
+[36mINFO[0m[0009] Successfully imported 2 image(s) into 1 cluster(s) 
+secret/db-secret created
+service/db created
+statefulset.apps/db created
+Waiting for statefulset spec update to be observed...
+Waiting for 1 pods to be ready...
+Waiting for 1 pods to be ready...
+partitioned roll out complete: 1 new pods have been updated...
+configmap/db-schema created
+job.batch/migrate created
+job.batch/migrate condition met
+configmap/web-config created
+deployment.apps/web created
+service/web created
+Waiting for deployment "web" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+configmap/worker-config created
+deployment.apps/worker created
+deployment.apps/worker scaled
+Release "monitoring" does not exist. Installing it now.
+NAME: monitoring
+LAST DEPLOYED: Wed Nov 25 12:59:05 2026
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+kube-prometheus-stack has been installed. Check its status by running:
+  kubectl --namespace default get pods -l "release=monitoring"
+
+Get Grafana 'admin' user password by running:
+
+  kubectl --namespace default get secrets monitoring-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+
+Access Grafana local instance:
+
+  export POD_NAME=$(kubectl --namespace default get pod -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=monitoring" -oname)
+  kubectl --namespace default port-forward $POD_NAME 3000
+
+Get your grafana admin user password by running:
+
+  kubectl get secret --namespace default -l app.kubernetes.io/component=admin-secret -o jsonpath="{.items[0].data.admin-password}" | base64 --decode ; echo
+
+
+Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
+Release "pg-exporter" does not exist. Installing it now.
+NAME: pg-exporter
+LAST DEPLOYED: Wed Nov 25 12:59:41 2026
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=prometheus-postgres-exporter,app.kubernetes.io/instance=pg-exporter" -o jsonpath="{.items[0].metadata.name}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl port-forward $POD_NAME 8080:9187 --namespace default

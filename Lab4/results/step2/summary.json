@@ -1,0 +1,20 @@
+{
+  "tasks_done": 20.0,
+  "t_fetch_s": 0.013406020795810037,
+  "t_process_s": 0.03635474595357664,
+  "t_store_s": 0.00179584369470831,
+  "t_claim_s": 0.0016311093844978192,
+  "t_io_s": 0.015201864490518347,
+  "t_cpu_s": 0.03635474595357664,
+  "metric_names": [
+    "worker_claims_created",
+    "worker_claims_total",
+    "worker_task_duration_seconds_bucket",
+    "worker_task_duration_seconds_count",
+    "worker_task_duration_seconds_created",
+    "worker_task_duration_seconds_sum",
+    "worker_tasks_created",
+    "worker_tasks_in_flight",
+    "worker_tasks_total"
+  ]
+}

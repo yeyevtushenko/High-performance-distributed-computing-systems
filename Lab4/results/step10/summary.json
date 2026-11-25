@@ -1,0 +1,23 @@
+{
+  "trigger": "tasks_notify",
+  "poll_100ms": {
+    "tasks": 300,
+    "p50_ms": 32.298,
+    "p99_ms": 85.85600000000001,
+    "mean_ms": 31.860526666666665,
+    "idle": {
+      "worker_claims_per_s": 48.81677899246957,
+      "db_xacts_per_s": 56.13929584134001
+    }
+  },
+  "listen": {
+    "tasks": 300,
+    "p50_ms": 1.777,
+    "p99_ms": 5.178,
+    "mean_ms": 1.8604699999999998,
+    "idle": {
+      "worker_claims_per_s": 0.0,
+      "db_xacts_per_s": 7.81535242094703
+    }
+  }
+}

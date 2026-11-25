@@ -1,0 +1,28 @@
+{
+  "poll_50ms": {
+    "n": 300,
+    "n_dup_table": 29,
+    "D_table": 0.09666666666666666,
+    "n_dup_logs": 29,
+    "D_logs": 0.09666666666666666,
+    "results_rows": 330,
+    "elapsed_s": 3.4263479709625244,
+    "claims_task": 330.0,
+    "claims_empty": 108.0,
+    "claim_p99_ms": 33.575000000000024,
+    "claim_mean_ms": 1.6215285727516089
+  },
+  "poll_1ms": {
+    "n": 300,
+    "n_dup_table": 31,
+    "D_table": 0.10333333333333333,
+    "n_dup_logs": 31,
+    "D_logs": 0.10333333333333333,
+    "results_rows": 337,
+    "elapsed_s": 3.470762014389038,
+    "claims_task": 337.0,
+    "claims_empty": 2839.0,
+    "claim_p99_ms": 7.649999999999864,
+    "claim_mean_ms": 0.6125390916742837
+  }
+}

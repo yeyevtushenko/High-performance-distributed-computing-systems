@@ -1,0 +1,238 @@
+12:59:46 step 1 start
+$ curl -X POST /donations/1/tasks
+{"id":1,"record_id":1,"status":"queued","seed":17968624,"attempts":0,"max_attempts":3,"token":0,"lease_until":null,"worker_id":null,"created_at":"2026-11-25T10:59:49.138041+00:00","started_at":null,"finished_at":null}
+HTTP 202
+
+$ curl -X POST /donations/999999/tasks
+{"error":"donation not found"}
+HTTP 404
+
+$ curl -X GET /tasks/1
+{"id":1,"record_id":1,"status":"queued","seed":17968624,"attempts":0,"max_attempts":3,"token":0,"lease_until":null,"worker_id":null,"created_at":"2026-11-25T10:59:49.138041+00:00","started_at":null,"finished_at":null}
+HTTP 200
+
+$ curl -X GET /tasks/999999
+{"error":"task not found"}
+HTTP 404
+
+$ curl -X GET /tasks?status=queued&limit=2&offset=0
+{"items":[{"id":1,"record_id":1,"status":"queued","seed":17968624,"attempts":0,"max_attempts":3,"token":0,"lease_until":null,"worker_id":null,"created_at":"2026-11-25T10:59:49.138041+00:00","started_at":null,"finished_at":null}],"total":1,"limit":2,"offset":0}
+HTTP 200
+
+$ curl /metrics | grep ^tasks_
+tasks_queued 1.0
+tasks_running 0.0
+
+$ curl -X GET /tasks/1
+{"id":1,"record_id":1,"status":"done","seed":17968624,"attempts":1,"max_attempts":3,"token":1,"lease_until":"2026-11-25T11:00:02.355461+00:00","worker_id":"worker-bfdbd55d5-xvbk8","created_at":"2026-11-25T10:59:49.138041+00:00","started_at":"2026-11-25T10:59:57.355461+00:00","finished_at":"2026-11-25T10:59:57.422216+00:00","result":{"std":1182.6638266689629,"mean":2052.6347747961554,"p_hi":3896,"p_lo":209,"removed":6545}}
+HTTP 200
+
+$ \d tasks
+                                     Table "public.tasks"
+    Column    |           Type           | Collation | Nullable |           Default            
+--------------+--------------------------+-----------+----------+------------------------------
+ id           | bigint                   |           | not null | generated always as identity
+ record_id    | bigint                   |           | not null | 
+ status       | character varying(8)     |           | not null | 'queued'::character varying
+ seed         | bigint                   |           | not null | 
+ attempts     | integer                  |           | not null | 0
+ max_attempts | integer                  |           | not null | 3
+ token        | bigint                   |           | not null | 0
+ lease_until  | timestamp with time zone |           |          | 
+ worker_id    | text                     |           |          | 
+ created_at   | timestamp with time zone |           | not null | clock_timestamp()
+ started_at   | timestamp with time zone |           |          | 
+ finished_at  | timestamp with time zone |           |          | 
+Indexes:
+    "tasks_pkey" PRIMARY KEY, btree (id)
+    "tasks_status_created_at_idx" btree (status, created_at)
+Check constraints:
+    "tasks_status_check" CHECK (status::text = ANY (ARRAY['queued'::character varying, 'running'::character varying, 'done'::character varying, 'failed'::character varying]::text[]))
+Foreign-key constraints:
+    "tasks_record_id_fkey" FOREIGN KEY (record_id) REFERENCES donations(id)
+Referenced by:
+    TABLE "task_results" CONSTRAINT "task_results_task_id_fkey" FOREIGN KEY (task_id) REFERENCES tasks(id)
+
+                           Table "public.task_results"
+   Column   |           Type           | Collation | Nullable |      Default      
+------------+--------------------------+-----------+----------+-------------------
+ task_id    | bigint                   |           | not null | 
+ token      | bigint                   |           | not null | 
+ worker_id  | text                     |           | not null | 
+ result     | jsonb                    |           | not null | 
+ created_at | timestamp with time zone |           | not null | clock_timestamp()
+Indexes:
+    "task_results_pkey" PRIMARY KEY, btree (task_id)
+Foreign-key constraints:
+    "task_results_task_id_fkey" FOREIGN KEY (task_id) REFERENCES tasks(id)
+
+
+12:59:59 step 1 done
+12:59:59 step 2 start
+tasks: sent 20, 202 20, other 0, rate 100.0/s, duration 0.2s
+[step2/summary.json] {"tasks_done": 20.0, "t_fetch_s": 0.013406020795810037, "t_process_s": 0.03635474595357664, "t_store_s": 0.00179584369470831, "t_claim_s": 0.0016311093844978192, "t_io_s": 0.015201864490518347, "t_cpu_s": 0.03635474595357664, "metric_names": ["worker_claims_created", "worker_claims_total", "worker_task_duration_seconds_bucket", "worker_task_duration_seconds_count", "worker_task_duration_seconds_created", "worker_task_duration_seconds_sum", "worker_tasks_created", "worker_tasks_in_flight", "worker_tasks_total"]}
+13:00:08 step 2 done
+13:00:08 step 3 start
+tasks: sent 300, 202 300, other 0, rate 100.0/s, duration 3.0s
+tasks: sent 300, 202 300, other 0, rate 100.0/s, duration 3.0s
+[step3/summary.json] {"poll_50ms": {"n": 300, "n_dup_table": 29, "D_table": 0.09666666666666666, "n_dup_logs": 29, "D_logs": 0.09666666666666666, "results_rows": 330, "elapsed_s": 3.4263479709625244, "claims_task": 330.0, "claims_empty": 108.0, "claim_p99_ms": 33.575000000000024, "claim_mean_ms": 1.6215285727516089}, "poll_1ms": {"n": 300, "n_dup_table": 31, "D_table": 0.10333333333333333, "n_dup_logs": 31, "D_logs": 0.10333333333333333, "results_rows": 337, "elapsed_s": 3.470762014389038, "claims_task": 337.0, "claims_empty": 2839.0, "claim_p99_ms": 7.649999999999864, "claim_mean_ms": 0.6125390916742837}}
+13:00:35 step 3 done
+13:00:35 step 4 start
+tasks: sent 300, 202 300, other 0, rate 100.0/s, duration 3.0s
+tasks: sent 300, 202 300, other 0, rate 100.0/s, duration 3.0s
+[step4/summary.json] {"skip_locked": {"n": 300, "n_dup_table": 0, "D_table": 0.0, "n_dup_logs": 0, "D_logs": 0.0, "results_rows": 300, "elapsed_s": 3.4277210235595703, "claims_task": 300.0, "claims_empty": 5500.0, "claim_p99_ms": 3.5, "claim_mean_ms": 0.4447307835778639, "lock_waits_max": 0, "lock_waits_samples": [0, 0, 0, 0]}, "for_update": {"n": 300, "n_dup_table": 0, "D_table": 0.0, "n_dup_logs": 0, "D_logs": 0.0, "results_rows": 300, "elapsed_s": 3.4511618614196777, "claims_task": 300.0, "claims_empty": 6843.0, "claim_p99_ms": 1.6704838709677374, "claim_mean_ms": 0.3636637021905852, "lock_waits_max": 0, "lock_waits_samples": [0, 0, 0, 0]}}
+13:01:05 step 4 done
+13:01:05 step 5 start
+tasks: sent 100, 202 100, other 0, rate 10.0/s, duration 10.0s
+13:02:08 stopped None with task None
+Traceback (most recent call last):
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 634, in <module>
+    main()
+    ~~~~^^
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 629, in main
+    globals()[f"step{s}"](args)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 374, in step5
+    sh("kubectl", "exec", victim, "--", "pkill", "-CONT", "-f", "worker.py")
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 26, in sh
+    p = subprocess.run(cmd, input=input, capture_output=True, text=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1036, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1896, in _execute_child
+    self.pid = _fork_exec(
+               ~~~~~~~~~~^
+            args, executable_list,
+            ^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+            process_group, gid, gids, uid, umask,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            preexec_fn, _USE_VFORK)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+13:02:48 step 5 start
+13:02:51 stopped worker-bfdbd55d5-4gpvf with task 8
+tasks: sent 100, 202 100, other 0, rate 30.0/s, duration 3.3s
+[step5/summary.json] {"stopped_worker": "worker-bfdbd55d5-4gpvf", "task_id": 8, "stop_unix": 1795604571.076448, "cont_unix": 1795604581.301158, "before": {"id": 8, "status": "running", "attempts": 1, "token": 1, "worker_id": "worker-bfdbd55d5-4gpvf", "lease_until": "2026-11-25T11:02:56.048685+00:00", "started_at": "2026-11-25T11:02:51.048685+00:00", "finished_at": null}, "after": {"id": 8, "status": "done", "attempts": 2, "token": 2, "worker_id": "worker-bfdbd55d5-8wj54", "lease_until": "2026-11-25T11:03:03.171543+00:00", "started_at": "2026-11-25T11:02:58.171543+00:00", "finished_at": "2026-11-25T11:02:58.198161+00:00"}, "completed_by": ["worker-bfdbd55d5-8wj54"], "results_rows": 1, "results": [{"task_id": 8, "token": 2, "worker_id": "worker-bfdbd55d5-8wj54", "created_at": "2026-11-25T11:02:58.198938+00:00"}], "victim_zero_rows_lines": ["2026-11-25T11:03:01.305+00:00 worker-bfdbd55d5-4gpvf heartbeat updated 0 rows task=8 token=1", "2026-11-25T11:03:01.309+00:00 worker-bfdbd55d5-4gpvf store updated 0 rows task=8 token=1"], "victim_task_lines": ["2026-11-25T11:03:01.305+00:00 worker-bfdbd55d5-4gpvf heartbeat updated 0 rows task=8 token=1", "2026-11-25T11:03:01.309+00:00 worker-bfdbd55d5-4gpvf store updated 0 rows task=8 token=1", "2026-11-25T11:01:10.701+00:00 worker-bfdbd55d5-8wj54 done task=8 token=1 attempts=1", "2026-11-25T11:02:58.200+00:00 worker-bfdbd55d5-8wj54 done task=8 token=2 attempts=2"], "all_done": 100, "tasks_with_many_results": 0}
+13:03:07 step 5 done
+13:03:11 step 6 start
+tasks: sent 400, 202 400, other 0, rate 200.0/s, duration 2.0s
+13:03:41 W=1 X=19.53
+tasks: sent 400, 202 400, other 0, rate 200.0/s, duration 2.0s
+13:04:01 W=2 X=42.38
+tasks: sent 400, 202 400, other 0, rate 200.0/s, duration 2.0s
+13:04:14 W=5 X=93.43
+[step6/summary.json] {"W=1": {"W": 1, "tasks": 400, "processing_s": 20.480592012405396, "all_workers_started_after_s": 0.0, "window_s": 20.480592012405396, "tasks_in_window": 400, "X": 19.530685429293943, "X_std_per_second": 3.7423976493960374, "per_second": [20, 21, 11, 22, 22, 23, 22, 22, 22, 21, 18, 16, 9, 17, 17, 21, 21, 21, 20, 21, 13], "claim_p99_ms": 6.599999999999966, "db_tps": 109.10464726326474, "db_cpu_cores": 0.3064486745587044, "db_sample_span_s": 20.31994104385376, "t_fetch_s": 0.0024780515687806265, "t_process_s": 0.043825475375134766, "t_store_s": 0.002999410484957262}, "W=2": {"W": 2, "tasks": 400, "processing_s": 9.570061922073364, "all_workers_started_after_s": 0.22702407836914062, "window_s": 9.343037843704224, "tasks_in_window": 396, "X": 42.384501339341504, "X_std_per_second": 7.959860237466485, "per_second": [24, 43, 21, 46, 45, 44, 46, 44, 46, 37], "claim_p99_ms": 11.949999999999934, "db_tps": 228.85024057966334, "db_cpu_cores": 0.3011205630838527, "db_sample_span_s": 9.254960775375366, "t_fetch_s": 0.0017386392231317914, "t_process_s": 0.040059430887428533, "t_store_s": 0.0023988520117705693}, "W=5": {"W": 5, "tasks": 400, "processing_s": 4.310362815856934, "all_workers_started_after_s": 0.028932809829711914, "window_s": 4.281430006027222, "tasks_in_window": 400, "X": 93.42672878848805, "X_std_per_second": 23.79469478686373, "per_second": [23, 111, 52, 101, 107, 6], "claim_p99_ms": 26.6749999999999, "db_tps": 323.1928988875114, "db_cpu_cores": 0.346097449583856, "db_sampl
+13:04:14 step 6 done
+13:04:14 step 7 start
+tasks: sent 11772, 202 11772, other 0, rate 65.4/s, duration 180.0s
+tasks: sent 14574, 202 14574, other 0, rate 121.45/s, duration 120.0s
+[step7/summary.json] {"steady": {"rate_target": 65.4, "lambda": 65.4, "W_q_s": 0.00780766509723955, "lambda_W_q": 0.5106212973594666, "L_q_measured": 0.5416666666666666, "diff_pct": 6.0799205727889465, "window_unix": [1795604716.818291, 1795604836.818291]}, "overload": {"rate_target": 121.45, "created": 14574, "queue_at_end": 1159, "W_q_first_100_s": 0.06564457416534424, "W_q_last_100_s": 10.953192286491394}}
+13:09:41 step 7 done
+13:09:41 step 8 start
+tasks: sent 5886, 202 5886, other 0, rate 65.4/s, duration 90.0s
+[step8/summary.json] {"total": 5886, "done": 5886, "failed": 0, "attempts_gt_1": 0, "many_results": 0, "restart_unix": 1795605014.3107488, "exit_codes": {"worker-bfdbd55d5-lzngk": {"exit_code": 0, "reason": "Completed"}, "worker-bfdbd55d5-kgltq": {"exit_code": 0, "reason": "Completed"}, "worker-bfdbd55d5-zdf9z": {"exit_code": 0, "reason": "Completed"}, "worker-bfdbd55d5-wt247": {"exit_code": 0, "reason": "Completed"}, "worker-bfdbd55d5-mldxm": {"exit_code": 0, "reason": "Completed"}}, "requeued_by_workers": 0, "sigterm_lines": ["2026-11-25T11:10:15.153+00:00 worker-bfdbd55d5-kgltq SIGTERM received, no new claims", "2026-11-25T11:10:14.393+00:00 worker-bfdbd55d5-lzngk SIGTERM received, no new claims", "2026-11-25T11:10:15.849+00:00 worker-bfdbd55d5-mldxm SIGTERM received, no new claims", "2026-11-25T11:10:15.363+00:00 worker-bfdbd55d5-wt247 SIGTERM received, no new claims", "2026-11-25T11:10:15.275+00:00 worker-bfdbd55d5-zdf9z SIGTERM received, no new claims"], "exit_lines": ["2026-11-25T11:10:15.226+00:00 worker-bfdbd55d5-kgltq exit 0", "2026-11-25T11:10:14.405+00:00 worker-bfdbd55d5-lzngk exit 0", "2026-11-25T11:10:15.894+00:00 worker-bfdbd55d5-mldxm exit 0", "2026-11-25T11:10:15.385+00:00 worker-bfdbd55d5-wt247 exit 0", "2026-11-25T11:10:15.336+00:00 worker-bfdbd55d5-zdf9z exit 0"]}
+13:11:20 step 8 done
+13:11:20 step 9 start
+13:13:56 terminated {'task_id': 1395, 'worker_id': 'worker-84f4f4848d-wkgmv', 'pid': 7394, 'application_name': 'worker-84f4f4848d-wkgmv/main', 'state': 'idle', 'terminated': True, 'at': 1795605236.420491}
+tasks: sent 19620, 202 19620, other 0, rate 65.4/s, duration 300.0s
+Traceback (most recent call last):
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 646, in <module>
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 641, in main
+    out[mode] = {"tasks": len(values), "p50_ms": pick(0.5) * 1000, "p99_ms": pick(0.99) * 1000,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 574, in step9
+    for _ in range(300):
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 101, in wait_empty
+    left = int(sql("SELECT count(*) FROM tasks WHERE status IN ('queued', 'running')"))
+               ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 33, in sql
+    return sh("kubectl", "exec", "-i", "db-0", "--", "sh", "-c",
+           ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -At -v ON_ERROR_STOP=1', input=query).strip()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 26, in sh
+    p = subprocess.run(cmd, input=input, capture_output=True, text=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1036, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1896, in _execute_child
+    self.pid = _fork_exec(
+               ~~~~~~~~~~^
+            args, executable_list,
+            ^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+            process_group, gid, gids, uid, umask,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            preexec_fn, _USE_VFORK)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+BlockingIOError: [Errno 35] Resource temporarily unavailable
+13:35:52 step 9 start
+Traceback (most recent call last):
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 667, in <module>
+    main()
+    ~~~~^^
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 662, in main
+    globals()[f"step{s}"](args)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 573, in step9
+    xr = x_r()
+  File "/Users/yehoryevtushenko/BPOC/Lab4/scripts/lab.py", line 484, in x_r
+    return json.load(open(os.path.join(RESULTS, "step6", "summary.json")))[f"W={R}"]["X"]
+                     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/yehoryevtushenko/BPOC/Lab4/results/step6/summary.json'
+13:36:04 step 6 start
+tasks: sent 400, 202 400, other 0, rate 200.0/s, duration 2.0s
+13:36:32 W=1 X=20.97
+tasks: sent 400, 202 400, other 0, rate 200.0/s, duration 2.0s
+13:36:52 W=2 X=41.20
+tasks: sent 400, 202 400, other 0, rate 200.0/s, duration 2.0s
+13:37:06 W=5 X=96.35
+[step6/summary.json] {"W=1": {"W": 1, "tasks": 400, "processing_s": 19.076521158218384, "all_workers_started_after_s": 0.0, "window_s": 19.076521158218384, "tasks_in_window": 400, "X": 20.968183699871055, "X_std_per_second": 2.6034165586355513, "per_second": [16, 15, 13, 21, 23, 22, 20, 23, 22, 21, 22, 22, 22, 21, 23, 22, 22, 22, 22, 6], "claim_p99_ms": 20.900000000000034, "db_tps": 93.2601295870382, "db_cpu_cores": 0.07714974602282926, "db_sample_span_s": 18.92555809020996, "t_fetch_s": 0.0018671632326816108, "t_process_s": 0.03950917678285447, "t_store_s": 0.0036295874587677236}, "W=2": {"W": 2, "tasks": 400, "processing_s": 9.859834909439087, "all_workers_started_after_s": 0.2967338562011719, "window_s": 9.563101053237915, "tasks_in_window": 394, "X": 41.2000247416185, "X_std_per_second": 7.688375063113864, "per_second": [8, 44, 20, 43, 46, 41, 43, 46, 44, 45, 14], "claim_p99_ms": 8.899999999999958, "db_tps": 166.69164254745505, "db_cpu_cores": 0.07837544691883475, "db_sample_span_s": 9.448584079742432, "t_fetch_s": 0.0021823168691010534, "t_process_s": 0.040462654668032276, "t_store_s": 0.001952777160418376}, "W=5": {"W": 5, "tasks": 400, "processing_s": 4.1894731521606445, "all_workers_started_after_s": 0.03774118423461914, "window_s": 4.151731967926025, "tasks_in_window": 400, "X": 96.34533324650478, "X_std_per_second": 26.919633479426622, "per_second": [84, 108, 53, 112, 43], "claim_p99_ms": 42.433333333333394, "db_tps": 367.1098211828932, "db_cpu_cores": 0.10578091450402707, "db_sample_sp
+13:37:06 step 6 done
+13:37:06 step 7 start
+tasks: sent 12139, 202 12139, other 0, rate 67.44/s, duration 180.0s
+tasks: sent 15030, 202 15030, other 0, rate 125.25/s, duration 120.0s
+[step7/summary.json] {"steady": {"rate_target": 67.44, "lambda": 67.44166666666666, "W_q_s": 0.007519860269406751, "lambda_W_q": 0.5071519096692403, "L_q_measured": 0.5, "diff_pct": -1.4102105370962115, "window_unix": [1795606689.216533, 1795606809.216533]}, "overload": {"rate_target": 125.25, "created": 15030, "queue_at_end": 1499, "W_q_first_100_s": 0.1072094202041626, "W_q_last_100_s": 13.523126637935638}}
+13:42:36 step 7 done
+13:42:36 step 8 start
+tasks: sent 6070, 202 6070, other 0, rate 67.44/s, duration 90.0s
+[step8/summary.json] {"total": 6070, "done": 6070, "failed": 0, "attempts_gt_1": 0, "many_results": 0, "restart_unix": 1795606988.95595, "exit_codes": {"worker-6f745b48b4-tq285": {"exit_code": 0, "reason": "Completed"}, "worker-6f745b48b4-54sjz": {"exit_code": 0, "reason": "Completed"}, "worker-6f745b48b4-tdckj": {"exit_code": 0, "reason": "Completed"}, "worker-6f745b48b4-qcx6s": {"exit_code": 0, "reason": "Completed"}, "worker-6f745b48b4-nm54f": {"exit_code": 0, "reason": "Completed"}}, "requeued_by_workers": 0, "sigterm_lines": ["2026-11-25T11:43:09.633+00:00 worker-6f745b48b4-54sjz SIGTERM received, no new claims", "2026-11-25T11:43:10.121+00:00 worker-6f745b48b4-nm54f SIGTERM received, no new claims", "2026-11-25T11:43:09.661+00:00 worker-6f745b48b4-qcx6s SIGTERM received, no new claims", "2026-11-25T11:43:09.588+00:00 worker-6f745b48b4-tdckj SIGTERM received, no new claims", "2026-11-25T11:43:09.048+00:00 worker-6f745b48b4-tq285 SIGTERM received, no new claims"], "exit_lines": ["2026-11-25T11:43:09.653+00:00 worker-6f745b48b4-54sjz exit 0", "2026-11-25T11:43:10.196+00:00 worker-6f745b48b4-nm54f exit 0", "2026-11-25T11:43:09.702+00:00 worker-6f745b48b4-qcx6s exit 0", "2026-11-25T11:43:09.687+00:00 worker-6f745b48b4-tdckj exit 0", "2026-11-25T11:43:09.060+00:00 worker-6f745b48b4-tq285 exit 0"]}
+13:44:15 step 8 done
+13:44:15 step 9 start
+13:46:51 terminated {'task_id': 1396, 'worker_id': 'worker-6cbd57f678-987q6', 'pid': 24046, 'application_name': 'worker-6cbd57f678-987q6/main', 'state': 'idle', 'terminated': True, 'at': 1795607211.455733}
+tasks: sent 20232, 202 20232, other 0, rate 67.44/s, duration 300.0s
+[step9/summary.json] {"rate": 67.44, "X_R_no_failures": 96.34533324650478, "t0": 1795607060.9386282, "t_gen_end": 1795607361.373375, "t_drained": 1795609104.535737, "X_run": 9.270258464195885, "restarts": {"worker-6cbd57f678-5b9dl": 727, "worker-6cbd57f678-987q6": 725, "worker-6cbd57f678-g7cct": 719, "worker-6cbd57f678-jgkz8": 723, "worker-6cbd57f678-xf9vt": 722}, "restarts_before": {"worker-6cbd57f678-5b9dl": 0, "worker-6cbd57f678-987q6": 0, "worker-6cbd57f678-g7cct": 0, "worker-6cbd57f678-jgkz8": 0, "worker-6cbd57f678-xf9vt": 0}, "restarts_total": 3616, "kubectl_get_pods": "NAME                      READY   STATUS    RESTARTS        AGE   IP           NODE               NOMINATED NODE   READINESS GATES\nworker-6cbd57f678-5b9dl   1/1     Running   727 (14s ago)   34m   10.42.1.31   k3d-lab4-agent-1   <none>           <none>\nworker-6cbd57f678-987q6   1/1     Running   725 (19s ago)   34m   10.42.1.32   k3d-lab4-agent-1   <none>           <none>\nworker-6cbd57f678-g7cct   1/1     Running   719 (9s ago)    34m   10.42.0.38   k3d-lab4-agent-0   <none>           <none>\nworker-6cbd57f678-jgkz8   1/1     Running   723 (14s ago)   34m   10.42.0.37   k3d-lab4-agent-0   <none>           <none>\nworker-6cbd57f678-xf9vt   1/1     Running   722 (9s ago)    34m   10.42.1.30   k3d-lab4-agent-1   <none>           <none>\n", "attempts_distribution": [{"attempts": 1, "status": "done", "n": 17132}, {"attempts": 2, "status": "done", "n": 2655}, {"attempts": 3, "status": "done", "n": 374}, {"attempts": 3, "status"
+[step9/timeline.json] {"prom": {"tasks_queued": [{"metric": {}, "values": [[1795607050.939, "1"], [1795607055.939, "0"], [1795607060.939, "0"], [1795607065.939, "1"], [1795607070.939, "277"], [1795607075.939, "565"], [1795607080.939, "870"], [1795607085.939, "1150"], [1795607090.939, "1452"], [1795607095.939, "1759"], [1795607100.939, "2041"], [1795607105.939, "2315"], [1795607110.939, "2628"], [1795607115.939, "2897"], [1795607120.939, "3220"], [1795607125.939, "3482"], [1795607130.939, "3776"], [1795607135.939, "4069"], [1795607140.939, "4358"], [1795607145.939, "4650"], [1795607150.939, "4950"], [1795607155.939, "5247"], [1795607160.939, "5539"], [1795607165.939, "5843"], [1795607170.939, "6143"], [1795607175.939, "6398"], [1795607180.939, "6717"], [1795607185.939, "7015"], [1795607190.939, "7335"], [1795607195.939, "7603"], [1795607200.939, "7929"], [1795607205.939, "8158"], [1795607210.939, "8475"], [1795607215.939, "8740"], [1795607220.939, "9048"], [1795607225.939, "9336"], [1795607230.939, "9623"], [1795607235.939, "9918"], [1795607240.939, "10199"], [1795607245.939, "10497"], [1795607250.939, "10798"], [1795607255.939, "11070"], [1795607260.939, "11366"], [1795607265.939, "11655"], [1795607270.939, "11957"], [1795607275.939, "12235"], [1795607280.939, "12518"], [1795607285.939, "12803"], [1795607290.939, "13104"], [1795607295.939, "13413"], [1795607300.939, "13688"], [1795607305.939, "14005"], [1795607310.939, "14296"], [1795607315.939, "14605"], [1795607320.939, "14911"], [1795607325.939
+14:18:32 step 9 done
+14:18:32 step 10 start
+tasks: sent 300, 202 300, other 0, rate 5.0/s, duration 60.0s
+tasks: sent 300, 202 300, other 0, rate 5.0/s, duration 60.0s
+[step10/summary.json] {"trigger": "tasks_notify", "poll_100ms": {"tasks": 300, "p50_ms": 32.298, "p99_ms": 85.85600000000001, "mean_ms": 31.860526666666665, "idle": {"worker_claims_per_s": 48.81677899246957, "db_xacts_per_s": 56.13929584134001}}, "listen": {"tasks": 300, "p50_ms": 1.777, "p99_ms": 5.178, "mean_ms": 1.8604699999999998, "idle": {"worker_claims_per_s": 0.0, "db_xacts_per_s": 7.81535242094703}}}
+14:22:05 step 10 done
+14:22:05 step 5 start
+14:22:10 stopped worker-857474fc5d-ngd9s with task 7
+tasks: sent 100, 202 100, other 0, rate 30.0/s, duration 3.3s
+[step5/summary.json] {"stopped_worker": "worker-857474fc5d-ngd9s", "task_id": 7, "stop_unix": 1795609330.233621, "cont_unix": 1795609340.3876648, "before": {"id": 7, "status": "running", "attempts": 1, "token": 1, "worker_id": "worker-857474fc5d-ngd9s", "lease_until": "2026-11-25T12:22:15.207351+00:00", "started_at": "2026-11-25T12:22:10.207351+00:00", "finished_at": null}, "after": {"id": 7, "status": "done", "attempts": 2, "token": 2, "worker_id": "worker-857474fc5d-vn9ch", "lease_until": "2026-11-25T12:22:24.083217+00:00", "started_at": "2026-11-25T12:22:19.083217+00:00", "finished_at": "2026-11-25T12:22:19.121825+00:00"}, "completed_by": ["worker-857474fc5d-vn9ch"], "results_rows": 1, "results": [{"task_id": 7, "token": 2, "worker_id": "worker-857474fc5d-vn9ch", "created_at": "2026-11-25T12:22:19.122511+00:00"}], "victim_zero_rows_lines": ["2026-11-25T12:22:20.391+00:00 worker-857474fc5d-ngd9s store updated 0 rows task=7 token=1"], "victim_task_lines": ["2026-11-25T12:22:20.391+00:00 worker-857474fc5d-ngd9s store updated 0 rows task=7 token=1", "2026-11-25T12:22:19.123+00:00 worker-857474fc5d-vn9ch done task=7 token=2 attempts=2"], "all_done": 100, "tasks_with_many_results": 0}
+14:22:26 step 5 done

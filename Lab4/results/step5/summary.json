@@ -1,0 +1,47 @@
+{
+  "stopped_worker": "worker-857474fc5d-ngd9s",
+  "task_id": 7,
+  "stop_unix": 1795609330.233621,
+  "cont_unix": 1795609340.3876648,
+  "before": {
+    "id": 7,
+    "status": "running",
+    "attempts": 1,
+    "token": 1,
+    "worker_id": "worker-857474fc5d-ngd9s",
+    "lease_until": "2026-11-25T12:22:15.207351+00:00",
+    "started_at": "2026-11-25T12:22:10.207351+00:00",
+    "finished_at": null
+  },
+  "after": {
+    "id": 7,
+    "status": "done",
+    "attempts": 2,
+    "token": 2,
+    "worker_id": "worker-857474fc5d-vn9ch",
+    "lease_until": "2026-11-25T12:22:24.083217+00:00",
+    "started_at": "2026-11-25T12:22:19.083217+00:00",
+    "finished_at": "2026-11-25T12:22:19.121825+00:00"
+  },
+  "completed_by": [
+    "worker-857474fc5d-vn9ch"
+  ],
+  "results_rows": 1,
+  "results": [
+    {
+      "task_id": 7,
+      "token": 2,
+      "worker_id": "worker-857474fc5d-vn9ch",
+      "created_at": "2026-11-25T12:22:19.122511+00:00"
+    }
+  ],
+  "victim_zero_rows_lines": [
+    "2026-11-25T12:22:20.391+00:00 worker-857474fc5d-ngd9s store updated 0 rows task=7 token=1"
+  ],
+  "victim_task_lines": [
+    "2026-11-25T12:22:20.391+00:00 worker-857474fc5d-ngd9s store updated 0 rows task=7 token=1",
+    "2026-11-25T12:22:19.123+00:00 worker-857474fc5d-vn9ch done task=7 token=2 attempts=2"
+  ],
+  "all_done": 100,
+  "tasks_with_many_results": 0
+}

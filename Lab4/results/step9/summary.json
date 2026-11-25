@@ -1,0 +1,90 @@
+{
+  "rate": 67.44,
+  "X_R_no_failures": 96.34533324650478,
+  "t0": 1795607060.9386282,
+  "t_gen_end": 1795607361.373375,
+  "t_drained": 1795609104.535737,
+  "X_run": 9.270258464195885,
+  "restarts": {
+    "worker-6cbd57f678-5b9dl": 727,
+    "worker-6cbd57f678-987q6": 725,
+    "worker-6cbd57f678-g7cct": 719,
+    "worker-6cbd57f678-jgkz8": 723,
+    "worker-6cbd57f678-xf9vt": 722
+  },
+  "restarts_before": {
+    "worker-6cbd57f678-5b9dl": 0,
+    "worker-6cbd57f678-987q6": 0,
+    "worker-6cbd57f678-g7cct": 0,
+    "worker-6cbd57f678-jgkz8": 0,
+    "worker-6cbd57f678-xf9vt": 0
+  },
+  "restarts_total": 3616,
+  "kubectl_get_pods": "NAME                      READY   STATUS    RESTARTS        AGE   IP           NODE               NOMINATED NODE   READINESS GATES\nworker-6cbd57f678-5b9dl   1/1     Running   727 (14s ago)   34m   10.42.1.31   k3d-lab4-agent-1   <none>           <none>\nworker-6cbd57f678-987q6   1/1     Running   725 (19s ago)   34m   10.42.1.32   k3d-lab4-agent-1   <none>           <none>\nworker-6cbd57f678-g7cct   1/1     Running   719 (9s ago)    34m   10.42.0.38   k3d-lab4-agent-0   <none>           <none>\nworker-6cbd57f678-jgkz8   1/1     Running   723 (14s ago)   34m   10.42.0.37   k3d-lab4-agent-0   <none>           <none>\nworker-6cbd57f678-xf9vt   1/1     Running   722 (9s ago)    34m   10.42.1.30   k3d-lab4-agent-1   <none>           <none>\n",
+  "attempts_distribution": [
+    {
+      "attempts": 1,
+      "status": "done",
+      "n": 17132
+    },
+    {
+      "attempts": 2,
+      "status": "done",
+      "n": 2655
+    },
+    {
+      "attempts": 3,
+      "status": "done",
+      "n": 374
+    },
+    {
+      "attempts": 3,
+      "status": "failed",
+      "n": 71
+    }
+  ],
+  "counts": {
+    "total": 20232,
+    "done": 20161,
+    "failed": 71,
+    "attempts_gt_1": 3100,
+    "many_results": 0
+  },
+  "share_attempts_gt_1": 0.15322261763542902,
+  "share_failed": 0.003509292210359826,
+  "f": 0.15,
+  "f3": 0.0033749999999999995,
+  "scenario": {
+    "task_id": 1396,
+    "worker_id": "worker-6cbd57f678-987q6",
+    "pid": 24046,
+    "application_name": "worker-6cbd57f678-987q6/main",
+    "state": "idle",
+    "terminated": true,
+    "at": 1795607211.455733
+  },
+  "scenario_task": {
+    "id": 1396,
+    "status": "done",
+    "attempts": 1,
+    "token": 1,
+    "worker_id": "worker-6cbd57f678-987q6",
+    "lease_until": "2026-11-25T11:46:56.415811+00:00",
+    "started_at": "2026-11-25T11:46:51.415811+00:00",
+    "finished_at": "2026-11-25T11:46:51.490989+00:00"
+  },
+  "scenario_task_results": [
+    {
+      "task_id": 1396,
+      "token": 1,
+      "worker_id": "worker-6cbd57f678-987q6",
+      "created_at": "2026-11-25T11:46:51.493218+00:00"
+    }
+  ],
+  "scenario_worker_lines": [
+    "2026-11-25T11:46:51.485+00:00 worker-6cbd57f678-987q6 main connection lost: InterfaceError: connection is closed",
+    "2026-11-25T11:46:51.490+00:00 worker-6cbd57f678-987q6 main connection reconnected",
+    "2026-11-25T11:46:51.493+00:00 worker-6cbd57f678-987q6 done task=1396 token=1 attempts=1"
+  ],
+  "crash_lines": 3189
+}

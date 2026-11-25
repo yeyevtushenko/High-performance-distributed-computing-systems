@@ -1,0 +1,45 @@
+{
+  "total": 6070,
+  "done": 6070,
+  "failed": 0,
+  "attempts_gt_1": 0,
+  "many_results": 0,
+  "restart_unix": 1795606988.95595,
+  "exit_codes": {
+    "worker-6f745b48b4-tq285": {
+      "exit_code": 0,
+      "reason": "Completed"
+    },
+    "worker-6f745b48b4-54sjz": {
+      "exit_code": 0,
+      "reason": "Completed"
+    },
+    "worker-6f745b48b4-tdckj": {
+      "exit_code": 0,
+      "reason": "Completed"
+    },
+    "worker-6f745b48b4-qcx6s": {
+      "exit_code": 0,
+      "reason": "Completed"
+    },
+    "worker-6f745b48b4-nm54f": {
+      "exit_code": 0,
+      "reason": "Completed"
+    }
+  },
+  "requeued_by_workers": 0,
+  "sigterm_lines": [
+    "2026-11-25T11:43:09.633+00:00 worker-6f745b48b4-54sjz SIGTERM received, no new claims",
+    "2026-11-25T11:43:10.121+00:00 worker-6f745b48b4-nm54f SIGTERM received, no new claims",
+    "2026-11-25T11:43:09.661+00:00 worker-6f745b48b4-qcx6s SIGTERM received, no new claims",
+    "2026-11-25T11:43:09.588+00:00 worker-6f745b48b4-tdckj SIGTERM received, no new claims",
+    "2026-11-25T11:43:09.048+00:00 worker-6f745b48b4-tq285 SIGTERM received, no new claims"
+  ],
+  "exit_lines": [
+    "2026-11-25T11:43:09.653+00:00 worker-6f745b48b4-54sjz exit 0",
+    "2026-11-25T11:43:10.196+00:00 worker-6f745b48b4-nm54f exit 0",
+    "2026-11-25T11:43:09.702+00:00 worker-6f745b48b4-qcx6s exit 0",
+    "2026-11-25T11:43:09.687+00:00 worker-6f745b48b4-tdckj exit 0",
+    "2026-11-25T11:43:09.060+00:00 worker-6f745b48b4-tq285 exit 0"
+  ]
+}

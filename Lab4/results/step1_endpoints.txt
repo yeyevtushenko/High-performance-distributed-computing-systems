@@ -1,0 +1,67 @@
+$ curl -X POST /donations/1/tasks
+{"id":1,"record_id":1,"status":"queued","seed":17968624,"attempts":0,"max_attempts":3,"token":0,"lease_until":null,"worker_id":null,"created_at":"2026-11-25T10:59:49.138041+00:00","started_at":null,"finished_at":null}
+HTTP 202
+
+$ curl -X POST /donations/999999/tasks
+{"error":"donation not found"}
+HTTP 404
+
+$ curl -X GET /tasks/1
+{"id":1,"record_id":1,"status":"queued","seed":17968624,"attempts":0,"max_attempts":3,"token":0,"lease_until":null,"worker_id":null,"created_at":"2026-11-25T10:59:49.138041+00:00","started_at":null,"finished_at":null}
+HTTP 200
+
+$ curl -X GET /tasks/999999
+{"error":"task not found"}
+HTTP 404
+
+$ curl -X GET /tasks?status=queued&limit=2&offset=0
+{"items":[{"id":1,"record_id":1,"status":"queued","seed":17968624,"attempts":0,"max_attempts":3,"token":0,"lease_until":null,"worker_id":null,"created_at":"2026-11-25T10:59:49.138041+00:00","started_at":null,"finished_at":null}],"total":1,"limit":2,"offset":0}
+HTTP 200
+
+$ curl /metrics | grep ^tasks_
+tasks_queued 1.0
+tasks_running 0.0
+
+$ curl -X GET /tasks/1
+{"id":1,"record_id":1,"status":"done","seed":17968624,"attempts":1,"max_attempts":3,"token":1,"lease_until":"2026-11-25T11:00:02.355461+00:00","worker_id":"worker-bfdbd55d5-xvbk8","created_at":"2026-11-25T10:59:49.138041+00:00","started_at":"2026-11-25T10:59:57.355461+00:00","finished_at":"2026-11-25T10:59:57.422216+00:00","result":{"std":1182.6638266689629,"mean":2052.6347747961554,"p_hi":3896,"p_lo":209,"removed":6545}}
+HTTP 200
+
+$ \d tasks
+                                     Table "public.tasks"
+    Column    |           Type           | Collation | Nullable |           Default            
+--------------+--------------------------+-----------+----------+------------------------------
+ id           | bigint                   |           | not null | generated always as identity
+ record_id    | bigint                   |           | not null | 
+ status       | character varying(8)     |           | not null | 'queued'::character varying
+ seed         | bigint                   |           | not null | 
+ attempts     | integer                  |           | not null | 0
+ max_attempts | integer                  |           | not null | 3
+ token        | bigint                   |           | not null | 0
+ lease_until  | timestamp with time zone |           |          | 
+ worker_id    | text                     |           |          | 
+ created_at   | timestamp with time zone |           | not null | clock_timestamp()
+ started_at   | timestamp with time zone |           |          | 
+ finished_at  | timestamp with time zone |           |          | 
+Indexes:
+    "tasks_pkey" PRIMARY KEY, btree (id)
+    "tasks_status_created_at_idx" btree (status, created_at)
+Check constraints:
+    "tasks_status_check" CHECK (status::text = ANY (ARRAY['queued'::character varying, 'running'::character varying, 'done'::character varying, 'failed'::character varying]::text[]))
+Foreign-key constraints:
+    "tasks_record_id_fkey" FOREIGN KEY (record_id) REFERENCES donations(id)
+Referenced by:
+    TABLE "task_results" CONSTRAINT "task_results_task_id_fkey" FOREIGN KEY (task_id) REFERENCES tasks(id)
+
+                           Table "public.task_results"
+   Column   |           Type           | Collation | Nullable |      Default      
+------------+--------------------------+-----------+----------+-------------------
+ task_id    | bigint                   |           | not null | 
+ token      | bigint                   |           | not null | 
+ worker_id  | text                     |           | not null | 
+ result     | jsonb                    |           | not null | 
+ created_at | timestamp with time zone |           | not null | clock_timestamp()
+Indexes:
+    "task_results_pkey" PRIMARY KEY, btree (task_id)
+Foreign-key constraints:
+    "task_results_task_id_fkey" FOREIGN KEY (task_id) REFERENCES tasks(id)
+

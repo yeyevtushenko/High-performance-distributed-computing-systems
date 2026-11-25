@@ -1,0 +1,42 @@
+{
+  "skip_locked": {
+    "n": 300,
+    "n_dup_table": 0,
+    "D_table": 0.0,
+    "n_dup_logs": 0,
+    "D_logs": 0.0,
+    "results_rows": 300,
+    "elapsed_s": 3.4277210235595703,
+    "claims_task": 300.0,
+    "claims_empty": 5500.0,
+    "claim_p99_ms": 3.5,
+    "claim_mean_ms": 0.4447307835778639,
+    "lock_waits_max": 0,
+    "lock_waits_samples": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "for_update": {
+    "n": 300,
+    "n_dup_table": 0,
+    "D_table": 0.0,
+    "n_dup_logs": 0,
+    "D_logs": 0.0,
+    "results_rows": 300,
+    "elapsed_s": 3.4511618614196777,
+    "claims_task": 300.0,
+    "claims_empty": 6843.0,
+    "claim_p99_ms": 1.6704838709677374,
+    "claim_mean_ms": 0.3636637021905852,
+    "lock_waits_max": 0,
+    "lock_waits_samples": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

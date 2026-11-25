@@ -1,0 +1,7 @@
+$ query: up{job="worker"}
+  {'instance': '10.42.1.38:9100', 'job': 'worker', 'node': 'k3d-lab4-agent-1', 'pod': 'worker-857474fc5d-vn9ch'} 1
+  {'instance': '10.42.1.37:9100', 'job': 'worker', 'node': 'k3d-lab4-agent-1', 'pod': 'worker-857474fc5d-ngd9s'} 1
+$ query: worker_tasks_total
+  {'pod': 'worker-857474fc5d-vn9ch', 'result': 'done'} 98
+  {'pod': 'worker-857474fc5d-ngd9s', 'result': 'done'} 2
+  {'pod': 'worker-857474fc5d-ngd9s', 'result': 'lost'} 1

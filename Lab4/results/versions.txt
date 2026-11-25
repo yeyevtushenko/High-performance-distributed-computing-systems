@@ -1,0 +1,5 @@
+k3d version v5.9.0
+k3s version v1.36.4-k3s1 (default)
+Client Version: v1.36.1
+v4.3.2+g8346aaa
+29.9.3

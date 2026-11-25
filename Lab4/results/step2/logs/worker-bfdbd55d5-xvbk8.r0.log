@@ -1,0 +1,22 @@
+2026-11-25T10:59:57.355+00:00 worker-bfdbd55d5-xvbk8 started claim=skip_locked safe=True wait=poll lease=5.0s poll=50ms fail_rate=0.0
+2026-11-25T10:59:57.424+00:00 worker-bfdbd55d5-xvbk8 done task=1 token=1 attempts=1
+2026-11-25T11:00:03.296+00:00 worker-bfdbd55d5-xvbk8 done task=1 token=1 attempts=1
+2026-11-25T11:00:03.328+00:00 worker-bfdbd55d5-xvbk8 done task=2 token=1 attempts=1
+2026-11-25T11:00:03.356+00:00 worker-bfdbd55d5-xvbk8 done task=3 token=1 attempts=1
+2026-11-25T11:00:03.424+00:00 worker-bfdbd55d5-xvbk8 done task=4 token=1 attempts=1
+2026-11-25T11:00:03.455+00:00 worker-bfdbd55d5-xvbk8 done task=5 token=1 attempts=1
+2026-11-25T11:00:03.522+00:00 worker-bfdbd55d5-xvbk8 done task=6 token=1 attempts=1
+2026-11-25T11:00:03.548+00:00 worker-bfdbd55d5-xvbk8 done task=7 token=1 attempts=1
+2026-11-25T11:00:03.620+00:00 worker-bfdbd55d5-xvbk8 done task=8 token=1 attempts=1
+2026-11-25T11:00:03.647+00:00 worker-bfdbd55d5-xvbk8 done task=9 token=1 attempts=1
+2026-11-25T11:00:03.713+00:00 worker-bfdbd55d5-xvbk8 done task=10 token=1 attempts=1
+2026-11-25T11:00:03.740+00:00 worker-bfdbd55d5-xvbk8 done task=11 token=1 attempts=1
+2026-11-25T11:00:03.764+00:00 worker-bfdbd55d5-xvbk8 done task=12 token=1 attempts=1
+2026-11-25T11:00:03.833+00:00 worker-bfdbd55d5-xvbk8 done task=13 token=1 attempts=1
+2026-11-25T11:00:03.858+00:00 worker-bfdbd55d5-xvbk8 done task=14 token=1 attempts=1
+2026-11-25T11:00:03.925+00:00 worker-bfdbd55d5-xvbk8 done task=15 token=1 attempts=1
+2026-11-25T11:00:03.950+00:00 worker-bfdbd55d5-xvbk8 done task=16 token=1 attempts=1
+2026-11-25T11:00:04.019+00:00 worker-bfdbd55d5-xvbk8 done task=17 token=1 attempts=1
+2026-11-25T11:00:04.044+00:00 worker-bfdbd55d5-xvbk8 done task=18 token=1 attempts=1
+2026-11-25T11:00:04.113+00:00 worker-bfdbd55d5-xvbk8 done task=19 token=1 attempts=1
+2026-11-25T11:00:04.141+00:00 worker-bfdbd55d5-xvbk8 done task=20 token=1 attempts=1
