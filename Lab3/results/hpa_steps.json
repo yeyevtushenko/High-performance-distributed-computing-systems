@@ -1,0 +1,57 @@
+{
+  "url": "http://localhost:8080",
+  "processes": 8,
+  "connections": 40,
+  "instances": 1,
+  "t0_unix": 1795601751.268,
+  "profile": {
+    "mode": "segments",
+    "segments": [
+      [
+        30.0,
+        569.0
+      ],
+      [
+        60.0,
+        3793.0
+      ],
+      [
+        90.0,
+        569.0
+      ]
+    ]
+  },
+  "steps": [],
+  "segments": [
+    {
+      "begin_s": 0.0,
+      "end_s": 30.0,
+      "target_rps": 569.0,
+      "p50_ms": 2.27,
+      "p99_ms": 3.36,
+      "ok_2xx": 17069,
+      "non_2xx": 0,
+      "conn_errors": 0
+    },
+    {
+      "begin_s": 30.0,
+      "end_s": 90.0,
+      "target_rps": 3793.0,
+      "p50_ms": 3221.6,
+      "p99_ms": 4980.77,
+      "ok_2xx": 132811,
+      "non_2xx": 91285,
+      "conn_errors": 1783
+    },
+    {
+      "begin_s": 90.0,
+      "end_s": 180.0,
+      "target_rps": 569.0,
+      "p50_ms": 2.9,
+      "p99_ms": 1765.46,
+      "ok_2xx": 52904,
+      "non_2xx": 0,
+      "conn_errors": 7
+    }
+  ]
+}

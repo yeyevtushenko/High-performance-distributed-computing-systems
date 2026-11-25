@@ -1,0 +1,5 @@
+NAME                                                   CPU(cores)   MEMORY(bytes)   
+db-0                                                   14m          27Mi            
+monitoring-kube-prometheus-operator-5fd9c8fc89-s9vsd   10m          20Mi            
+monitoring-kube-state-metrics-55dfb59c5c-46gzm         11m          22Mi            
+web-6c7d8575d6-kr5sr                                   4m           39Mi            

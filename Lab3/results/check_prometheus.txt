@@ -1,0 +1,22 @@
+$ query: sum by (pod) (rate(http_requests_total[1m]))
+  {'pod': 'web-6c7d8575d6-kr5sr'} 0.5091001654575538
+  {'pod': 'web-6c7d8575d6-z8lg4'} 0.509090909090909
+$ query: container_cpu_cfs_periods_total{container="web"}
+  {'__name__': 'container_cpu_cfs_periods_total', 'container': 'web', 'job': 'kubelet', 'node': 'k3d-lab3-agent-1', 'pod': 'web-6c7d8575d6-kr5sr'} 26542
+  {'__name__': 'container_cpu_cfs_periods_total', 'container': 'web', 'job': 'kubelet', 'node': 'k3d-lab3-agent-1', 'pod': 'web-6c7d8575d6-z8lg4'} 1444
+$ query: container_cpu_cfs_throttled_periods_total{container="web"}
+  {'__name__': 'container_cpu_cfs_throttled_periods_total', 'container': 'web', 'job': 'kubelet', 'node': 'k3d-lab3-agent-1', 'pod': 'web-6c7d8575d6-kr5sr'} 6928
+  {'__name__': 'container_cpu_cfs_throttled_periods_total', 'container': 'web', 'job': 'kubelet', 'node': 'k3d-lab3-agent-1', 'pod': 'web-6c7d8575d6-z8lg4'} 83
+$ query: kube_deployment_status_replicas_ready{deployment="web"}
+  {'__name__': 'kube_deployment_status_replicas_ready', 'container': 'kube-state-metrics', 'deployment': 'web', 'job': 'kube-state-metrics', 'pod': 'monitoring-kube-state-metrics-55dfb59c5c-46gzm'} 2
+$ query: pg_up
+  {'__name__': 'pg_up', 'container': 'prometheus-postgres-exporter', 'job': 'pg-exporter-prometheus-postgres-exporter', 'pod': 'pg-exporter-prometheus-postgres-exporter-87ff759b8-d5bwm'} 1
+$ kubectl top pods
+NAME                                                       CPU(cores)   MEMORY(bytes)   
+db-0                                                       13m          58Mi            
+monitoring-kube-prometheus-operator-5fd9c8fc89-s9vsd       8m           31Mi            
+monitoring-kube-state-metrics-55dfb59c5c-46gzm             1m           27Mi            
+pg-exporter-prometheus-postgres-exporter-87ff759b8-d5bwm   6m           10Mi            
+prometheus-monitoring-kube-prometheus-prometheus-0         38m          379Mi           
+web-6c7d8575d6-kr5sr                                       4m           65Mi            
+web-6c7d8575d6-z8lg4                                       4m           43Mi            

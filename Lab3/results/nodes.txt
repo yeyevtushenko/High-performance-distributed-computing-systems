@@ -1,0 +1,4 @@
+NAME                STATUS   ROLES           AGE     VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION            CONTAINER-RUNTIME
+k3d-lab3-agent-0    Ready    <none>          2m53s   v1.36.4+k3s1   172.18.0.4    <none>        K3s v1.36.4+k3s1   7.0.14-linuxkit (arm64)   containerd://2.3.4-k3s1.36
+k3d-lab3-agent-1    Ready    <none>          2m53s   v1.36.4+k3s1   172.18.0.5    <none>        K3s v1.36.4+k3s1   7.0.14-linuxkit (arm64)   containerd://2.3.4-k3s1.36
+k3d-lab3-server-0   Ready    control-plane   2m57s   v1.36.4+k3s1   172.18.0.3    <none>        K3s v1.36.4+k3s1   7.0.14-linuxkit (arm64)   containerd://2.3.4-k3s1.36

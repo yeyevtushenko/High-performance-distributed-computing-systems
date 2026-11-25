@@ -1,0 +1,8 @@
+NAME                                                       READY   STATUS            RESTARTS   AGE     IP          NODE                NOMINATED NODE   READINESS GATES
+db-0                                                       1/1     Running           0          2m34s   10.42.2.3   k3d-lab3-server-0   <none>           <none>
+migrate-wt7cw                                              0/1     Completed         0          104s    10.42.0.3   k3d-lab3-agent-0    <none>           <none>
+monitoring-kube-prometheus-operator-5fd9c8fc89-s9vsd       1/1     Running           0          50s     10.42.2.6   k3d-lab3-server-0   <none>           <none>
+monitoring-kube-state-metrics-55dfb59c5c-46gzm             1/1     Running           0          50s     10.42.2.5   k3d-lab3-server-0   <none>           <none>
+pg-exporter-prometheus-postgres-exporter-87ff759b8-d5bwm   1/1     Running           0          16s     10.42.2.9   k3d-lab3-server-0   <none>           <none>
+prometheus-monitoring-kube-prometheus-prometheus-0         0/2     PodInitializing   0          24s     10.42.2.7   k3d-lab3-server-0   <none>           <none>
+web-6c7d8575d6-kr5sr                                       1/1     Running           0          72s     10.42.1.4   k3d-lab3-agent-1    <none>           <none>

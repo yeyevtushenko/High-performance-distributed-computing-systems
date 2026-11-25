@@ -1,0 +1,47 @@
+
+$ curl -X POST http://localhost:8080/donations -H Content-Type: application/json -d {"donor_code":"D-9001","blood_group":"B","rh_factor":"+","volume_ml":450,"donation_date":"2026-11-20","is_suitable":true}
+HTTP/1.1 201 Created
+x-pod: web-6c7d8575d6-kr5sr
+{"id":101,"donor_code":"D-9001","blood_group":"B","rh_factor":"+","volume_ml":450,"donation_date":"2026-11-20","is_suitable":true}
+
+
+$ curl http://localhost:8080/donations?blood_group=B&limit=2&offset=0
+HTTP/1.1 200 OK
+x-pod: web-6c7d8575d6-kr5sr
+{"items":[{"id":12,"donor_code":"D-0012","blood_group":"B","rh_factor":"+","volume_ml":350,"donation_date":"2026-09-04","is_suitable":true},{"id":16,"donor_code":"D-0016","blood_group":"B","rh_factor":"-","volume_ml":300,"donation_date":"2026-09-20","is_suitable":true}],"total":18,"limit":2,"offset":0}
+
+
+$ curl http://localhost:8080/donations/101
+HTTP/1.1 200 OK
+x-pod: web-6c7d8575d6-kr5sr
+{"id":101,"donor_code":"D-9001","blood_group":"B","rh_factor":"+","volume_ml":450,"donation_date":"2026-11-20","is_suitable":true}
+
+
+$ curl -X PUT http://localhost:8080/donations/101 -H Content-Type: application/json -d {"donor_code":"D-9001","blood_group":"B","rh_factor":"-","volume_ml":400,"donation_date":"2026-11-20","is_suitable":false}
+HTTP/1.1 200 OK
+x-pod: web-6c7d8575d6-kr5sr
+{"id":101,"donor_code":"D-9001","blood_group":"B","rh_factor":"-","volume_ml":400,"donation_date":"2026-11-20","is_suitable":false}
+
+
+$ curl http://localhost:8080/donations/101
+HTTP/1.1 200 OK
+x-pod: web-6c7d8575d6-kr5sr
+{"id":101,"donor_code":"D-9001","blood_group":"B","rh_factor":"-","volume_ml":400,"donation_date":"2026-11-20","is_suitable":false}
+
+
+$ curl -X DELETE http://localhost:8080/donations/101
+HTTP/1.1 204 No Content
+x-pod: web-6c7d8575d6-kr5sr
+
+
+$ curl -X DELETE http://localhost:8080/donations/101
+HTTP/1.1 404 Not Found
+x-pod: web-6c7d8575d6-kr5sr
+{"error":"donation not found"}
+
+
+$ curl http://localhost:8080/donations/101
+HTTP/1.1 404 Not Found
+x-pod: web-6c7d8575d6-kr5sr
+{"error":"donation not found"}
+

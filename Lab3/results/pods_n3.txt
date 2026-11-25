@@ -1,0 +1,3 @@
+web-6c7d8575d6-8ccpr k3d-lab3-agent-0
+web-6c7d8575d6-kr5sr k3d-lab3-agent-1
+web-6c7d8575d6-w8rqf k3d-lab3-agent-0

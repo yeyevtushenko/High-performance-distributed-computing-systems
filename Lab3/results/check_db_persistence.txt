@@ -1,0 +1,9 @@
+$ curl http://localhost:8080/donations?limit=1
+{"items":[{"id":1,"donor_code":"D-0001","blood_group":"A","rh_factor":"+","volume_ml":300,"donation_date":"2026-02-16","is_suitable":true}],"total":100,"limit":1,"offset":0}
+$ kubectl delete pod db-0
+pod "db-0" deleted from default namespace
+$ kubectl get pod db-0
+NAME   READY   STATUS    RESTARTS   AGE
+db-0   1/1     Running   0          4s
+$ curl http://localhost:8080/donations?limit=1
+{"items":[{"id":1,"donor_code":"D-0001","blood_group":"A","rh_factor":"+","volume_ml":300,"donation_date":"2026-02-16","is_suitable":true}],"total":100,"limit":1,"offset":0}

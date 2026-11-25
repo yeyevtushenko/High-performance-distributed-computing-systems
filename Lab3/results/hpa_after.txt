@@ -1,0 +1,2 @@
+NAME   REFERENCE        TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+web    Deployment/web   cpu: 52%/70%   1         5         2          5m5s
