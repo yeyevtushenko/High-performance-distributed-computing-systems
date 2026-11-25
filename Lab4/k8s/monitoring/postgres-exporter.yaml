@@ -1,0 +1,21 @@
+nodeSelector:
+  role: infra
+tolerations:
+  - key: node-role.kubernetes.io/control-plane
+    operator: Exists
+    effect: NoSchedule
+config:
+  datasource:
+    host: db
+    port: "5432"
+    database: donations
+    sslmode: disable
+    userSecret:
+      name: db-secret
+      key: POSTGRES_USER
+    passwordSecret:
+      name: db-secret
+      key: POSTGRES_PASSWORD
+serviceMonitor:
+  enabled: true
+  interval: 5s

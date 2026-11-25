@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-schema
+data:
+  init.sql: |
+    CREATE TABLE IF NOT EXISTS donations (
+        id            BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        donor_code    VARCHAR(32) NOT NULL,
+        blood_group   VARCHAR(2)  NOT NULL CHECK (blood_group IN ('O', 'A', 'B', 'AB')),
+        rh_factor     CHAR(1)     NOT NULL CHECK (rh_factor IN ('+', '-')),
+        volume_ml     SMALLINT    NOT NULL CHECK (volume_ml BETWEEN 200 AND 500),
+        donation_date DATE        NOT NULL,
+        is_suitable   BOOLEAN     NOT NULL
+    );
+
+    CREATE INDEX IF NOT EXISTS donations_blood_group_id_idx ON donations (blood_group, id);
+  tasks.sql: |
+    CREATE TABLE IF NOT EXISTS tasks (
+        id           BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        record_id    BIGINT      NOT NULL REFERENCES donations (id),
+        status       VARCHAR(8)  NOT NULL DEFAULT 'queued' CHECK (status IN ('queued', 'running', 'done', 'failed')),
+        seed         BIGINT      NOT NULL,
+        attempts     INTEGER     NOT NULL DEFAULT 0,
+        max_attempts INTEGER     NOT NULL DEFAULT 3,
+        token        BIGINT      NOT NULL DEFAULT 0,
+        lease_until  TIMESTAMPTZ,
+        worker_id    TEXT,
+        created_at   TIMESTAMPTZ NOT NULL DEFAULT clock_timestamp(),
+        started_at   TIMESTAMPTZ,
+        finished_at  TIMESTAMPTZ
+    );
+
+    CREATE INDEX IF NOT EXISTS tasks_status_created_at_idx ON tasks (status, created_at);
+
+    CREATE TABLE IF NOT EXISTS task_results (
+        task_id    BIGINT      PRIMARY KEY REFERENCES tasks (id),
+        token      BIGINT      NOT NULL,
+        worker_id  TEXT        NOT NULL,
+        result     JSONB       NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT clock_timestamp()
+    );
+  notify.sql: |
+    CREATE OR REPLACE FUNCTION tasks_notify() RETURNS trigger AS $$
+    BEGIN
+        PERFORM pg_notify('tasks_new', NEW.id::text);
+        RETURN NEW;
+    END;
+    $$ LANGUAGE plpgsql;
+
+    DROP TRIGGER IF EXISTS tasks_notify ON tasks;
+    CREATE TRIGGER tasks_notify AFTER INSERT ON tasks FOR EACH ROW EXECUTE FUNCTION tasks_notify();
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migrate
+spec:
+  backoffLimit: 10
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: migrate
+          image: postgres:16
+          command: ["sh", "-c", "until pg_isready -h db; do sleep 1; done; psql -h db -v ON_ERROR_STOP=1 -f /sql/init.sql -f /sql/tasks.sql"]
+          env:
+            - name: PGDATABASE
+              valueFrom:
+                secretKeyRef: {name: db-secret, key: POSTGRES_DB}
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef: {name: db-secret, key: POSTGRES_USER}
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef: {name: db-secret, key: POSTGRES_PASSWORD}
+          volumeMounts:
+            - name: sql
+              mountPath: /sql
+      volumes:
+        - name: sql
+          configMap:
+            name: db-schema

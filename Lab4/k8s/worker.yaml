@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: worker-config
+data:
+  PGHOST: db
+  PGPORT: "5432"
+  WEB_URL: http://web:8000
+  CLAIM: skip_locked
+  SAFE: "1"
+  WAIT: poll
+  LEASE_S: "5"
+  T_POLL_MS: "50"
+  FAIL_RATE: "0"
+  SLICE_SIZE: "256"
+  Q_LO: "0.05"
+  Q_HI: "0.95"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+spec:
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: worker
+          image: donations-worker:4.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 9100
+          envFrom:
+            - configMapRef:
+                name: worker-config
+          env:
+            - name: PGDATABASE
+              valueFrom:
+                secretKeyRef: {name: db-secret, key: POSTGRES_DB}
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef: {name: db-secret, key: POSTGRES_USER}
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef: {name: db-secret, key: POSTGRES_PASSWORD}
+            - name: WORKER_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          resources:
+            requests:
+              cpu: 250m
+            limits:
+              cpu: 500m
+              memory: 512Mi
